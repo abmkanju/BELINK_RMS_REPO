@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8F49A7A-4C9A-4BAD-848F-9EEFE1662944}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pharmacy.Core</RootNamespace>
+    <AssemblyName>Pharmacy.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo121.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.10.0\lib\net45\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=5.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.5.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptopEngine.cs" />
+    <Compile Include="DarkMode.cs" />
+    <Compile Include="Entities\InvoiceSetting.cs" />
+    <Compile Include="Entities\HwFileData.cs" />
+    <Compile Include="Entities\AdminSystemSlotSetting.cs" />
+    <Compile Include="Entities\OnlineCustomer.cs" />
+    <Compile Include="Entities\OnlineOrder.cs" />
+    <Compile Include="Entities\OnlineOrderItem.cs" />
+    <Compile Include="Entities\OrderVoucher.cs" />
+    <Compile Include="Entities\ProfitStatementTransaction.cs" />
+    <Compile Include="Entities\AccountExpense.cs" />
+    <Compile Include="Entities\AccountExpenseCategory.cs" />
+    <Compile Include="Entities\AccTransaction.cs" />
+    <Compile Include="Entities\Adjustment.cs" />
+    <Compile Include="Entities\AdjustmentItem.cs" />
+    <Compile Include="Entities\AdminFBRSetting.cs" />
+    <Compile Include="Entities\AdminInvoiceSetting.cs" />
+    <Compile Include="Entities\ChargeInfo.cs" />
+    <Compile Include="Entities\PatientFormFeilds.cs" />
+    <Compile Include="Entities\AdminPharmacySetting.cs" />
+    <Compile Include="Entities\AdminPractiseSetting.cs" />
+    <Compile Include="Entities\AdminPrintFormatSetting.cs" />
+    <Compile Include="Entities\AdminProcedureInvoiceSetting.cs" />
+    <Compile Include="Entities\AdminShiftMasterSetting.cs" />
+    <Compile Include="Entities\AdmittedPatient.cs" />
+    <Compile Include="Entities\AuditLog.cs" />
+    <Compile Include="Entities\Batch.cs" />
+    <Compile Include="Entities\Bed.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\ChequeInfo.cs" />
+    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\DiscountItems.cs" />
+    <Compile Include="Entities\FBRInvoice.cs" />
+    <Compile Include="Entities\FlatDiscount.cs" />
+    <Compile Include="Entities\Expense.cs" />
+    <Compile Include="Entities\HwData.cs" />
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Entities\InvoiceItem.cs" />
+    <Compile Include="Entities\InvoicePayment.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\LoginHistory.cs" />
+    <Compile Include="Entities\LowStockMail.cs" />
+    <Compile Include="Entities\Manufacturer.cs" />
+    <Compile Include="Entities\MissedSale.cs" />
+    <Compile Include="Entities\OfflineTask.cs" />
+    <Compile Include="Entities\Patient.cs" />
+    <Compile Include="Entities\POSClosing.cs" />
+    <Compile Include="Entities\POSSkimmedCash.cs" />
+    <Compile Include="Entities\POSReceivedCash.cs" />
+    <Compile Include="Entities\Procedure.cs" />
+    <Compile Include="Entities\PurchaseOrder.cs" />
+    <Compile Include="Entities\PurchaseOrderItem.cs" />
+    <Compile Include="Entities\Rack.cs" />
+    <Compile Include="Entities\RackItems.cs" />
+    <Compile Include="Entities\Right.cs" />
+    <Compile Include="Entities\AdminShiftSetting.cs" />
+    <Compile Include="Entities\SalesReturn.cs" />
+    <Compile Include="Entities\SalesReturnItem.cs" />
+    <Compile Include="Entities\StockAudit.cs" />
+    <Compile Include="Entities\StockAuditDetail.cs" />
+    <Compile Include="Entities\StockConsumption.cs" />
+    <Compile Include="Entities\Stock.cs" />
+    <Compile Include="Entities\StockConsumptionItem.cs" />
+    <Compile Include="Entities\StockItem.cs" />
+    <Compile Include="Entities\StockReturn.cs" />
+    <Compile Include="Entities\StockReturnItem.cs" />
+    <Compile Include="Entities\Store.cs" />
+    <Compile Include="Entities\StoreClosing.cs" />
+    <Compile Include="Entities\SubDepartment.cs" />
+    <Compile Include="Entities\Supplier.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\Template.cs" />
+    <Compile Include="Entities\TemplateItems.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserPermission.cs" />
+    <Compile Include="Entities\UserRole.cs" />
+    <Compile Include="Entities\Vital.cs" />
+    <Compile Include="Entities\Ward.cs" />
+    <Compile Include="GlobalSharing.cs" />
+    <Compile Include="Interfaces\ChargeInfoRepository.cs" />
+    <Compile Include="Interfaces\ChequeInfoRepository.cs" />
+    <Compile Include="Interfaces\IItemRepository.cs" />
+    <Compile Include="Interfaces\IPatient.cs" />
+    <Compile Include="Interfaces\IPurchaseOrder.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IStock.cs" />
+    <Compile Include="Interfaces\IStockConsumption.cs" />
+    <Compile Include="Interfaces\ISupplierRepository.cs" />
+    <Compile Include="Interfaces\ITag.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceModel\m_Batch.cs" />
+    <Compile Include="ServiceModel\m_Customer.cs" />
+    <Compile Include="ServiceModel\m_Item.cs" />
+    <Compile Include="ServiceModel\m_items1.cs" />
+    <Compile Include="ServiceModel\m_item_variant.cs" />
+    <Compile Include="ServiceModel\m_Order.cs" />
+    <Compile Include="ServiceModel\m_OrderItem.cs" />
+    <Compile Include="ServiceModel\m_patient.cs" />
+    <Compile Include="ServiceModel\m_patientDetail.cs" />
+    <Compile Include="ServiceModel\m_Stock.cs" />
+    <Compile Include="ServiceModel\m_StockItem.cs" />
+    <Compile Include="SharedFunctions.cs" />
+    <Compile Include="SharedVariables.cs" />
+    <Compile Include="Utility\Login.cs" />
+    <Compile Include="Utility\NumberToWords.cs" />
+    <Compile Include="Utility\ObjectMapper.cs" />
+    <Compile Include="Utility\Service.cs" />
+    <Compile Include="ViewModels\DispatchMsg.cs" />
+    <Compile Include="ViewModels\ItemsAws.cs" />
+    <Compile Include="ViewModels\OnlineCustomerVM.cs" />
+    <Compile Include="ViewModels\OnlineIntegrateVM.cs" />
+    <Compile Include="ViewModels\OnlineItemVM.cs" />
+    <Compile Include="ViewModels\OnlineOrderAws1.cs" />
+    <Compile Include="ViewModels\OrderAws.cs" />
+    <Compile Include="ViewModels\OrderOnlineAws.cs" />
+    <Compile Include="ViewModels\PatientLedgerVM.cs" />
+    <Compile Include="ViewModels\ProfitStatementTransactionVM.cs" />
+    <Compile Include="ViewModels\AccountExpenseVM.cs" />
+    <Compile Include="ViewModels\AccTransactionsVM.cs" />
+    <Compile Include="ViewModels\AddPOStockVM.cs" />
+    <Compile Include="ViewModels\AllItemsDiscVM.cs" />
+    <Compile Include="ViewModels\AuditLogVM.cs" />
+    <Compile Include="ViewModels\AvailableQtyVM.cs" />
+    <Compile Include="ViewModels\BulkItemsVM.cs" />
+    <Compile Include="ViewModels\CashSummaryVM.cs" />
+    <Compile Include="ViewModels\DeleteInvoiceVM.cs" />
+    <Compile Include="ViewModels\DiscountedItemVM.cs" />
+    <Compile Include="ViewModels\DiscountItemVM.cs" />
+    <Compile Include="ViewModels\ExpiryNotiVM.cs" />
+    <Compile Include="ViewModels\FlatDiscountVM.cs" />
+    <Compile Include="ViewModels\InvoiceHistorySumVM.cs" />
+    <Compile Include="ViewModels\ItemExcelVM.cs" />
+    <Compile Include="ViewModels\ItemsComboVM.cs" />
+    <Compile Include="ViewModels\ItemsDataVM.cs" />
+    <Compile Include="ViewModels\ItemsEditVM.cs" />
+    <Compile Include="ViewModels\ItemStockVM.cs" />
+    <Compile Include="ViewModels\KeyValueVM.cs" />
+    <Compile Include="ViewModels\LowStockNotiVM.cs" />
+    <Compile Include="ViewModels\NarcoticDrugsPrintReportVM.cs" />
+    <Compile Include="ViewModels\PatientRptVM.cs" />
+    <Compile Include="ViewModels\ProductExpiryVM.cs" />
+    <Compile Include="ViewModels\ProductPriceVM.cs" />
+    <Compile Include="ViewModels\ProfitMarginVM.cs" />
+    <Compile Include="ViewModels\RackViewVM.cs" />
+    <Compile Include="ViewModels\RackVM.cs" />
+    <Compile Include="ViewModels\Response.cs" />
+    <Compile Include="ViewModels\SaleReturnAll.cs" />
+    <Compile Include="ViewModels\SalesReturnItemVM.cs" />
+    <Compile Include="ViewModels\SalesReturnTransactionVM.cs" />
+    <Compile Include="ViewModels\SelectListVM.cs" />
+    <Compile Include="ViewModels\StockAddFilterVM.cs" />
+    <Compile Include="ViewModels\StockAuditDetailVM.cs" />
+    <Compile Include="ViewModels\StockAuditsScreenVM.cs" />
+    <Compile Include="ViewModels\StockAuditVM.cs" />
+    <Compile Include="ViewModels\StockItemDetailRunTimeVM.cs" />
+    <Compile Include="ViewModels\StockReturnItemVM.cs" />
+    <Compile Include="ViewModels\StockReturnVM.cs" />
+    <Compile Include="ViewModels\StoreVM.cs" />
+    <Compile Include="ViewModels\SupplierInfoVM.cs" />
+    <Compile Include="ViewModels\SupplierItemsVM.cs" />
+    <Compile Include="ViewModels\SuppliersComboVM.cs" />
+    <Compile Include="ViewModels\TemplateItemVm.cs" />
+    <Compile Include="ViewModels\AdjustmentItemVM.cs" />
+    <Compile Include="ViewModels\AdjustmentsVM.cs" />
+    <Compile Include="ViewModels\AdmitPatientVM.cs" />
+    <Compile Include="ViewModels\BatchStockVM.cs" />
+    <Compile Include="ViewModels\CategoryVM.cs" />
+    <Compile Include="ViewModels\DeadStockVM.cs" />
+    <Compile Include="ViewModels\DepartmentVM.cs" />
+    <Compile Include="ViewModels\DiscountsMasterVM.cs" />
+    <Compile Include="ViewModels\DiscountVM.cs" />
+    <Compile Include="ViewModels\ExpiryVM.cs" />
+    <Compile Include="ViewModels\FinancialTransactionsVM.cs" />
+    <Compile Include="ViewModels\IncomeStatementVM.cs" />
+    <Compile Include="ViewModels\InvoiceItemVM.cs" />
+    <Compile Include="ViewModels\InvoicePaymentVM.cs" />
+    <Compile Include="ViewModels\InvoiceReturnVM.cs" />
+    <Compile Include="ViewModels\InvoiceTransactionsVM.cs" />
+    <Compile Include="ViewModels\InvoiceVM.cs" />
+    <Compile Include="ViewModels\ItemsVM.cs" />
+    <Compile Include="ViewModels\ItemWisePurchaseMasterVM.cs" />
+    <Compile Include="ViewModels\ItemWisePurchaseVM.cs" />
+    <Compile Include="ViewModels\ItemWiseRevenueVM.cs" />
+    <Compile Include="ViewModels\ItemWiseRevenueMasterVM.cs" />
+    <Compile Include="ViewModels\ItemWiseSalesMasterVM.cs" />
+    <Compile Include="ViewModels\ItemWiseSaleVM.cs" />
+    <Compile Include="ViewModels\Item_SuppliersVM.cs" />
+    <Compile Include="ViewModels\LowStockVM.cs" />
+    <Compile Include="ViewModels\NarcoticsDrugInvoiceVM.cs" />
+    <Compile Include="ViewModels\PatientInvoiceVM.cs" />
+    <Compile Include="ViewModels\PatientSearchSuggestionVM.cs" />
+    <Compile Include="ViewModels\PatientSearchVM.cs" />
+    <Compile Include="ViewModels\PatientVM.cs" />
+    <Compile Include="ViewModels\ProfitStatementMasterVM.cs" />
+    <Compile Include="ViewModels\ProfitStatementVM.cs" />
+    <Compile Include="ViewModels\PurchaseOrderGraphVM.cs" />
+    <Compile Include="ViewModels\StockGraphVM.cs" />
+    <Compile Include="ViewModels\PurchaseOrderItemVM.cs" />
+    <Compile Include="ViewModels\PurchaseOrderVM.cs" />
+    <Compile Include="ViewModels\PurchaseReportsMasterVM.cs" />
+    <Compile Include="ViewModels\PurchaseReportVM.cs" />
+    <Compile Include="ViewModels\PurchaseStatisticsVM.cs" />
+    <Compile Include="ViewModels\RevenueStatisticsVM.cs" />
+    <Compile Include="ViewModels\RightsVM.cs" />
+    <Compile Include="ViewModels\SaleGraphVM.cs" />
+    <Compile Include="ViewModels\SaleStatisticsVM.cs" />
+    <Compile Include="ViewModels\ShiftCollectionVM.cs" />
+    <Compile Include="ViewModels\StockConsumptionVM.cs" />
+    <Compile Include="ViewModels\StockConsumptionItemVM.cs" />
+    <Compile Include="ViewModels\StockItemVM.cs" />
+    <Compile Include="ViewModels\StockBillVM.cs" />
+    <Compile Include="ViewModels\StockPaymentVM.cs" />
+    <Compile Include="ViewModels\StocksReportVM.cs" />
+    <Compile Include="ViewModels\StockStatisticsParentVM.cs" />
+    <Compile Include="ViewModels\StockStatisticsVM.cs" />
+    <Compile Include="ViewModels\StockVM.cs" />
+    <Compile Include="ViewModels\SubDepartmentVM.cs" />
+    <Compile Include="ViewModels\SupplierDetailsVM.cs" />
+    <Compile Include="ViewModels\SupplierStockVM.cs" />
+    <Compile Include="ViewModels\SupplierVM.cs" />
+    <Compile Include="ViewModels\SummationsVM.cs" />
+    <Compile Include="ViewModels\TemplateVM.cs" />
+    <Compile Include="ViewModels\TodaysReportVM.cs" />
+    <Compile Include="ViewModels\UserSelectVM.cs" />
+    <Compile Include="ViewModels\VitalsGraphDataVM.cs" />
+    <Compile Include="ViewModels\VoucherVM.cs" />
+    <Compile Include="ViewModels\XRptVM.cs" />
+    <Compile Include="Wrapper\ItemsWrapper.cs" />
+    <Compile Include="Wrapper\PatientWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApiModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo %281%29.ico" />
+    <Content Include="logo121.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,3772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81E74845-95BB-4F66-8271-80B530A55527}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Pharmacy.UI</RootNamespace>
+    <AssemblyName>Pharmacy.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Healthwire\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Removal-954.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7951AAABA071FADDC4D415D81AE985CC70C3DB1E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Pharmacy.UI_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Core, Version=1.20.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Core.1.20.0\lib\net461\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Identity, Version=1.5.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Identity.1.5.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="BaseTypes, Version=1.0.0.75, Culture=neutral, PublicKeyToken=a5ab967c088e8330, processorArchitecture=MSIL">
+      <HintPath>..\packages\BaseTypes.PieroViano.1.0.0.75\lib\net45\BaseTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a5ab967c088e8330, processorArchitecture=MSIL">
+      <HintPath>..\packages\CoreLibrary.PieroViano.1.0.0.136\lib\net45\CoreLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a5ab967c088e8330, processorArchitecture=MSIL">
+      <HintPath>..\packages\CoreLibrary.PieroViano.1.0.0.136\lib\net45\CoreLibrary.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.Charts, Version=14.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=14.1.0.0, Culture=neutral, PublicKeyToken=f90dc37c26666a67" />
+    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=6.2.8.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.2.8\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net35\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net35\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>..\packages\CrystalReports.FlashControlV71.13.0.3500\lib\net20\FlashControlV71.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.33.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.33.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.33.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.33.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.33.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.33.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.33.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.33.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.33.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.33.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Sheets.v4, Version=1.33.0.1209, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Sheets.v4.1.33.0.1209\lib\net45\Google.Apis.Sheets.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="InputBox, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Essy.Tools.InputBox.1.0.0\lib\net20\InputBox.dll</HintPath>
+    </Reference>
+    <Reference Include="InputBoxLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a5ab967c088e8330, processorArchitecture=MSIL">
+      <HintPath>..\packages\InputBoxLibrary.PieroViano.1.0.0.75\lib\net45\InputBoxLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaFoundation, Version=3.1.0.32450, Culture=neutral, PublicKeyToken=36fa660e1d6ebf8d" />
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.35.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.4.35.0\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=2.18.4.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.Extensions.Msal.2.18.4\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.8.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.8.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.6.8.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.8.0\lib\net461\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.8.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.Assessment, Version=1.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Assessment.1.0.305\lib\net462\Microsoft.SqlServer.Assessment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Assessment.Types, Version=1.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Assessment.Authoring.1.0.282\lib\net462\Microsoft.SqlServer.Assessment.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfoExtended, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files\Microsoft SQL Server\120\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfoExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MultiSelectCombobox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MultiSelectCombobox.1.0.7\lib\portable-net4+sl4+wp7+win8\MultiSelectCombobox.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\IDM\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.10.0\lib\net45\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>..\packages\CrystalReports.FlashControlV71.13.0.3500\lib\net20\ShockwaveFlashObjects.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=20.4450.0.54, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.20.4.0.54\lib\net45\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.7.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.8.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.Data.1.0.2\lib\net461\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.ProtectedData.4.5.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.7.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2020.1.113.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.UI, Version=2020.1.113.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2020.1.113.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="TXDocumentServer, Version=27.0.1300.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638" />
+    <Reference Include="TXDocumentServer.Windows.Forms, Version=27.0.1000.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638" />
+    <Reference Include="TXDrawing, Version=27.0.400.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638" />
+    <Reference Include="TXDrawing.Windows.Forms, Version=27.0.400.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638" />
+    <Reference Include="TXImageProvider, Version=27.0.100.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638" />
+    <Reference Include="TXTextControl, Version=27.0.2000.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638" />
+    <Reference Include="TXTextControl.Windows.Forms, Version=27.0.1200.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL" />
+    <Reference Include="Zen.Barcode.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b5ae55aa76d2d9de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zen.Barcode.Rendering.Framework.3.1.10729.1\lib\Zen.Barcode.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivationForm.Designer.cs">
+      <DependentUpon>ActivationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DarkMode.cs" />
+    <Compile Include="DataSyncingManagement.cs" />
+    <Compile Include="DataSyncingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSyncingUI.Designer.cs">
+      <DependentUpon>DataSyncingUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataViewUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataViewUI.Designer.cs">
+      <DependentUpon>DataViewUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Franchise Deployement\frmFranchiseDeployement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Franchise Deployement\frmFranchiseDeployement.Designer.cs">
+      <DependentUpon>frmFranchiseDeployement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Franchise Deployement\frmMappingProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Franchise Deployement\frmMappingProgress.Designer.cs">
+      <DependentUpon>frmMappingProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Online Integration\frmOnlineCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Online Integration\frmOnlineCancel.Designer.cs">
+      <DependentUpon>frmOnlineCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Online Integration\frmOnlineIntegrate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Online Integration\frmOnlineIntegrate.Designer.cs">
+      <DependentUpon>frmOnlineIntegrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActivation.Designer.cs">
+      <DependentUpon>frmActivation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogoEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogoEditor.Designer.cs">
+      <DependentUpon>frmLogoEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPackages.Designer.cs">
+      <DependentUpon>frmPackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportIssue.Designer.cs">
+      <DependentUpon>frmReportIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateNotification.Designer.cs">
+      <DependentUpon>frmUpdateNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridDesigner.cs" />
+    <Compile Include="LabelBlinker.cs" />
+    <Compile Include="ListMunfecturers.cs" />
+    <Compile Include="CursorWait.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsShared.cs">
+      <DependentUpon>dsShared.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmApiLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmApiLogin.Designer.cs">
+      <DependentUpon>frmApiLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAuditLog\AuditLogTask.cs" />
+    <Compile Include="ManageOfflineTask\OfflineJsonTask.cs" />
+    <Compile Include="MenuBar\DlgAddStockFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\DlgAddStockFilter.Designer.cs">
+      <DependentUpon>DlgAddStockFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\frmContactUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\frmContactUs.Designer.cs">
+      <DependentUpon>frmContactUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\OrderVoucherPayment\frmVoucherPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\OrderVoucherPayment\frmVoucherPayment.Designer.cs">
+      <DependentUpon>frmVoucherPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\OrderVouchers\frmOrderVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\OrderVouchers\frmOrderVoucher.Designer.cs">
+      <DependentUpon>frmOrderVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\AuditLOgTask.cs" />
+    <Compile Include="MenuBar\Pharmacy\dlgExpiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\dlgExpiry.Designer.cs">
+      <DependentUpon>dlgExpiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddManufacturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddManufacturer.Designer.cs">
+      <DependentUpon>frmAddManufacturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddRack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddRack.Designer.cs">
+      <DependentUpon>frmAddRack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAuditLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAuditLogs.Designer.cs">
+      <DependentUpon>frmAuditLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmCamera.Designer.cs">
+      <DependentUpon>frmCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmChargeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmChargeDetails.Designer.cs">
+      <DependentUpon>frmChargeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmManageStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmManageStores.Designer.cs">
+      <DependentUpon>frmManageStores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStores.Designer.cs">
+      <DependentUpon>frmAddStores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmEditItemDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmEditItemDetails.Designer.cs">
+      <DependentUpon>frmEditItemDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPrintStockBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPrintStockBarcode.Designer.cs">
+      <DependentUpon>frmPrintStockBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmShortCutSalesReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmShortCutSalesReturn.Designer.cs">
+      <DependentUpon>frmShortCutSalesReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockReturnItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockReturnItem.Designer.cs">
+      <DependentUpon>frmStockReturnItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStockAudit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStockAudit.Designer.cs">
+      <DependentUpon>frmAddStockAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStockAudit3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStockAudit3.Designer.cs">
+      <DependentUpon>frmAddStockAudit3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddTemplate.Designer.cs">
+      <DependentUpon>frmAddTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmDiscountItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmDiscountItems.Designer.cs">
+      <DependentUpon>frmDiscountItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmEditDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmEditDetails.Designer.cs">
+      <DependentUpon>frmEditDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmInvoiceLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmInvoiceLogin.Designer.cs">
+      <DependentUpon>frmInvoiceLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockReturn.Designer.cs">
+      <DependentUpon>frmStockReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmMissedSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmMissedSales.Designer.cs">
+      <DependentUpon>frmMissedSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmNoteCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmNoteCalculator.Designer.cs">
+      <DependentUpon>frmNoteCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPrintBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPrintBarcode.Designer.cs">
+      <DependentUpon>frmPrintBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmRackView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmRackView.Designer.cs">
+      <DependentUpon>frmRackView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSearchItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSearchItem.Designer.cs">
+      <DependentUpon>frmSearchItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmManageRacks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmManageRacks.Designer.cs">
+      <DependentUpon>frmManageRacks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\FrmStockAudit2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\FrmStockAudit2.Designer.cs">
+      <DependentUpon>FrmStockAudit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockAudits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockAudits.Designer.cs">
+      <DependentUpon>frmStockAudits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmTemplates.Designer.cs">
+      <DependentUpon>frmTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmManufacturers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmManufacturers.Designer.cs">
+      <DependentUpon>frmManufacturers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\HttpConfiguration.cs" />
+    <Compile Include="MenuBar\Preferences\frmAddAccountExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmAddAccountExpenses.Designer.cs">
+      <DependentUpon>frmAddAccountExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmAddExpenseCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmAddExpenseCategory.Designer.cs">
+      <DependentUpon>frmAddExpenseCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmExpenseCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmExpenseCategories.Designer.cs">
+      <DependentUpon>frmExpenseCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\UserMenue\frmRestoreData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\UserMenue\frmRestoreData.Designer.cs">
+      <DependentUpon>frmRestoreData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationManager.cs" />
+    <Compile Include="ProductActivation.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Accounts\PatientLedgerRpt.cs">
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\Accounts\PatientLedgerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\PatientLedgerUI.Designer.cs">
+      <DependentUpon>PatientLedgerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Accounts\PatientLedgerViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\PatientLedgerViewer.Designer.cs">
+      <DependentUpon>PatientLedgerViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Accounts\PatientLedherViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\PatientLedherViewer.Designer.cs">
+      <DependentUpon>PatientLedherViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\GrossProfitStatementUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\GrossProfitStatementUI.Designer.cs">
+      <DependentUpon>GrossProfitStatementUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\GrossProfitStatementViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\GrossProfitStatementViewer.Designer.cs">
+      <DependentUpon>GrossProfitStatementViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemPurchasesReport_Landscape.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\GrossProfitstatement.cs">
+      <DependentUpon>GrossProfitstatement.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA4_Landscape.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA8_Detailed_2.cs">
+      <DependentUpon>POSInvoiceA8_Detailed_2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\SalesReturnA8.cs">
+      <DependentUpon>SalesReturnA8.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\StockDetailReportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\StockDetailReportUI.Designer.cs">
+      <DependentUpon>StockDetailReportUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StockStaticsRpt.cs">
+      <DependentUpon>StockStaticsRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ItemssRpt_Landscape.cs">
+      <DependentUpon>ItemssRpt_Landscape.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\AccountUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\AccountUI.designer.cs">
+      <DependentUpon>AccountUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Accounts\AccountRpt_Landscape.cs">
+      <DependentUpon>AccountRpt_Landscape.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\AccountRpt_Portrait.cs">
+      <DependentUpon>AccountRpt_Portrait.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\AccountViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\AccountViewer.Designer.cs">
+      <DependentUpon>AccountViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\StaffDetailsUIViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\StaffDetailsUIViewer.Designer.cs">
+      <DependentUpon>StaffDetailsUIViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\StaffDetialUIRpt_Landscape.cs">
+      <DependentUpon>StaffDetialUIRpt_Landscape.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\StaffDetailUIRpt_Portrait.cs">
+      <DependentUpon>StaffDetailUIRpt_Portrait.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\StaffDetailsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\StaffDetailsUI.Designer.cs">
+      <DependentUpon>StaffDetailsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\StaffUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\StaffUI.Designer.cs">
+      <DependentUpon>StaffUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\SalesReturnReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\SaleReturnA4_Detailed_Portrait_Update.cs">
+      <DependentUpon>SaleReturnA4_Detailed_Portrait_Update.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\SalesReturnViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\SalesReturnViewer.Designer.cs">
+      <DependentUpon>SalesReturnViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StockStaticsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\StockStaticsViewer.Designer.cs">
+      <DependentUpon>StockStaticsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_SearchRackItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SearchRackItems.Designer.cs">
+      <DependentUpon>UC_SearchRackItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmDiscounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmDiscounts.Designer.cs">
+      <DependentUpon>frmDiscounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmAddDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmAddDiscount.Designer.cs">
+      <DependentUpon>frmAddDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmSelectDays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmSelectDays.Designer.cs">
+      <DependentUpon>frmSelectDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\ShopActivities\frmAccTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\ShopActivities\frmAccTransactions.Designer.cs">
+      <DependentUpon>frmAccTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\ShopActivities\frmAddAccTr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\ShopActivities\frmAddAccTr.Designer.cs">
+      <DependentUpon>frmAddAccTr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\ShopActivities\frmPOSCosing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\ShopActivities\frmPOSCosing.Designer.cs">
+      <DependentUpon>frmPOSCosing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\ShopActivities\frmStoreClosing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\ShopActivities\frmStoreClosing.Designer.cs">
+      <DependentUpon>frmStoreClosing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CashSkimmingRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashSkimmingRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\DeleteInvoiceRpt_Portrait.cs">
+      <DependentUpon>DeleteInvoiceRpt_Portrait.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\DeleteInvoiceRpt_Landscape.cs">
+      <DependentUpon>DeleteInvoiceRpt_Landscape.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\DeleteInvoiceViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\DeleteInvoiceViewer.Designer.cs">
+      <DependentUpon>DeleteInvoiceViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PatientInvoicesViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientInvoicesViewer.Designer.cs">
+      <DependentUpon>PatientInvoicesViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PatientInvoicesRpt_Portrait.cs">
+      <DependentUpon>PatientInvoicesRpt_Portrait.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\frmItemBarcodeViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmItemBarcodeViewer.Designer.cs">
+      <DependentUpon>frmItemBarcodeViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmSkimedCashViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmSkimedCashViewer.Designer.cs">
+      <DependentUpon>frmSkimedCashViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWisePurchaseViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWisePurchaseViewer.Designer.cs">
+      <DependentUpon>ItemWisePurchaseViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsItemswiseRpt_Landscape.cs">
+      <DependentUpon>NarcoticDrugsItemswiseRpt_Landscape.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsRpt_Landscape_Updated.cs">
+      <DependentUpon>NarcoticDrugsRpt_Landscape_Updated.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsItemswiseRpt_Portrait.cs">
+      <DependentUpon>NarcoticDrugsItemswiseRpt_Portrait.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsRpt_Portrait_Updated.cs">
+      <DependentUpon>NarcoticDrugsRpt_Portrait_Updated.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticItemswiseSaleViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticItemswiseSaleViewer.Designer.cs">
+      <DependentUpon>NarcoticItemswiseSaleViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticItemswiseSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticItemswiseSale.Designer.cs">
+      <DependentUpon>NarcoticItemswiseSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PurchaseOrderA8Rpt.cs">
+      <DependentUpon>PurchaseOrderA8Rpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA4_Detailed_Portrait_Update.cs">
+      <DependentUpon>POSInvoiceA4_Detailed_Portrait_Update.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\DiscountedItemRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiscountedItemRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\AllItemsDiscountsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\AllItemsDiscountsUI.Designer.cs">
+      <DependentUpon>AllItemsDiscountsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\AllItems_DiscountedPriceUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\AllItems_DiscountedPriceUI.Designer.cs">
+      <DependentUpon>AllItems_DiscountedPriceUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\DiscountsRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiscountsRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\ProductExpiryRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductExpiryRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\ProductPriceRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductPriceRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\ProductExpiryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\ProductExpiryUI.Designer.cs">
+      <DependentUpon>ProductExpiryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\ProductPriceUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\ProductPriceUI.Designer.cs">
+      <DependentUpon>ProductPriceUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\frmProductReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\frmProductReports.Designer.cs">
+      <DependentUpon>frmProductReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\ProfitMarginRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfitMarginRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\DiscountedPriceUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\DiscountedPriceUI.Designer.cs">
+      <DependentUpon>DiscountedPriceUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\DiscountedItemViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\DiscountedItemViewer.Designer.cs">
+      <DependentUpon>DiscountedItemViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\ProductPriceViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\ProductPriceViewer.Designer.cs">
+      <DependentUpon>ProductPriceViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\ProductExpiryViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\ProductExpiryViewer.Designer.cs">
+      <DependentUpon>ProductExpiryViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\DiscountsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\DiscountsViewer.Designer.cs">
+      <DependentUpon>DiscountsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\ProfitMarginViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\ProfitMarginViewer.Designer.cs">
+      <DependentUpon>ProfitMarginViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product\ProfitMarginUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product\ProfitMarginUI.Designer.cs">
+      <DependentUpon>ProfitMarginUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptItemBarcode.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptItemBarcode.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\StockReturnDetailRpt.cs">
+      <DependentUpon>StockReturnDetailRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmItemSearchShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmItemSearchShortCuts.Designer.cs">
+      <DependentUpon>frmItemSearchShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_SearchItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SearchItems.Designer.cs">
+      <DependentUpon>UC_SearchItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptopEngine.cs" />
+    <Compile Include="CustomCode\CallenderColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomPagination.cs" />
+    <Compile Include="dsShared.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsShared.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAmountConverter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAmountConverter.Designer.cs">
+      <DependentUpon>frmAmountConverter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWaiting.Designer.cs">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmAddVital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmAddVital.Designer.cs">
+      <DependentUpon>frmAddVital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmAdmittedPatientTreatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmAdmittedPatientTreatment.Designer.cs">
+      <DependentUpon>frmAdmittedPatientTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmAdmittedPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmAdmittedPatients.Designer.cs">
+      <DependentUpon>frmAdmittedPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Help\frmShortCutKeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Help\frmShortCutKeys.Designer.cs">
+      <DependentUpon>frmShortCutKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\IndoorMgmt\frmAddWard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\IndoorMgmt\frmAddWard.Designer.cs">
+      <DependentUpon>frmAddWard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\IndoorMgmt\frmWards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\IndoorMgmt\frmWards.Designer.cs">
+      <DependentUpon>frmWards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmAssignBed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmAssignBed.Designer.cs">
+      <DependentUpon>frmAssignBed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmBed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmBed.designer.cs">
+      <DependentUpon>frmBed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmBedAllocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmBedAllocation.Designer.cs">
+      <DependentUpon>frmBedAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmBeds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmBeds.Designer.cs">
+      <DependentUpon>frmBeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmUpdateBed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmUpdateBed.Designer.cs">
+      <DependentUpon>frmUpdateBed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmWard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmWard.Designer.cs">
+      <DependentUpon>frmWard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmWards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indoor\Menu\frmWards.Designer.cs">
+      <DependentUpon>frmWards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Manage Modules\frmManageModules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Manage Modules\frmManageModules.Designer.cs">
+      <DependentUpon>frmManageModules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddCategory.Designer.cs">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddPatient.Designer.cs">
+      <DependentUpon>frmAddPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStock.Designer.cs">
+      <DependentUpon>frmAddStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStock2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddStock2.designer.cs">
+      <DependentUpon>frmAddStock2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddSupplier.Designer.cs">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddTag.Designer.cs">
+      <DependentUpon>frmAddTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAllItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmAllItems.Designer.cs">
+      <DependentUpon>frmAllItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmChequeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmChequeInfo.Designer.cs">
+      <DependentUpon>frmChequeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmConsumeStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmConsumeStock.Designer.cs">
+      <DependentUpon>frmConsumeStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmConsumeStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmConsumeStocks.Designer.cs">
+      <DependentUpon>frmConsumeStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmConsumeStockUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmConsumeStockUpdate.Designer.cs">
+      <DependentUpon>frmConsumeStockUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmDrugReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmDrugReturn.Designer.cs">
+      <DependentUpon>frmDrugReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmInvoice.designer.cs">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSalesReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSalesReturn.designer.cs">
+      <DependentUpon>frmSalesReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmItemInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmItemInfo.Designer.cs">
+      <DependentUpon>frmItemInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmItems.Designer.cs">
+      <DependentUpon>frmItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmManageStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmManageStocks.Designer.cs">
+      <DependentUpon>frmManageStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmMultipleItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmMultipleItems.Designer.cs">
+      <DependentUpon>frmMultipleItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPatientInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPatientInvoices.Designer.cs">
+      <DependentUpon>frmPatientInvoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPatientProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPatientProfile.Designer.cs">
+      <DependentUpon>frmPatientProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPatients.Designer.cs">
+      <DependentUpon>frmPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPurchaseOrder.Designer.cs">
+      <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPurchaseOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPurchaseOrderDetail.Designer.cs">
+      <DependentUpon>frmPurchaseOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPurchaseOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmPurchaseOrders.Designer.cs">
+      <DependentUpon>frmPurchaseOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSearchPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSearchPatient.Designer.cs">
+      <DependentUpon>frmSearchPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSearchPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSearchPatients.Designer.cs">
+      <DependentUpon>frmSearchPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmShowSerialKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmShowSerialKey.Designer.cs">
+      <DependentUpon>frmShowSerialKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockAdjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockAdjustment.designer.cs">
+      <DependentUpon>frmStockAdjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockAdjustments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockAdjustments.designer.cs">
+      <DependentUpon>frmStockAdjustments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockConsumption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockConsumption.designer.cs">
+      <DependentUpon>frmStockConsumption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockConsumptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockConsumptions.designer.cs">
+      <DependentUpon>frmStockConsumptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmStockPayments.Designer.cs">
+      <DependentUpon>frmStockPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSupplierInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSupplierInfo.Designer.cs">
+      <DependentUpon>frmSupplierInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmSuppliers.Designer.cs">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmInvoiceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\frmInvoiceHistory.Designer.cs">
+      <DependentUpon>frmInvoiceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Pharmacy\ProcedureInvoiceViewer.cs" />
+    <Compile Include="MenuBar\Preferences\AddProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\AddProcedure.Designer.cs">
+      <DependentUpon>AddProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmAddDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmAddDepartment.Designer.cs">
+      <DependentUpon>frmAddDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmDepartments.Designer.cs">
+      <DependentUpon>frmDepartments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmProcedureInvoice2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\frmProcedureInvoice2.designer.cs">
+      <DependentUpon>frmProcedureInvoice2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\ProcedureList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\Preferences\ProcedureList.Designer.cs">
+      <DependentUpon>ProcedureList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar\UserMenue\AdminSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\UserMenue\AdminSetting.Designer.cs">
+      <DependentUpon>AdminSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Accounts\BillPaymentsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\BillPaymentsUI.designer.cs">
+      <DependentUpon>BillPaymentsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Accounts\frmAccountsReportsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Accounts\frmAccountsReportsUI.designer.cs">
+      <DependentUpon>frmAccountsReportsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AdjustmentsRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdjustmentsRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AdjustmentsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\AdjustmentsViewer.Designer.cs">
+      <DependentUpon>AdjustmentsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\dsPharmacyReports.cs">
+      <DependentUpon>dsPharmacyReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\dsPharmacyReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPharmacyReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\DeletedInvoicesUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\DeletedInvoicesUI.designer.cs">
+      <DependentUpon>DeletedInvoicesUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\frmFinancialReportsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\frmFinancialReportsUI.designer.cs">
+      <DependentUpon>frmFinancialReportsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\PaymentModeRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentModeRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\PaymentModeRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentModeRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\PaymentModeUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\PaymentModeUI.designer.cs">
+      <DependentUpon>PaymentModeUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\PaymentModeViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\PaymentModeViewer.Designer.cs">
+      <DependentUpon>PaymentModeViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\PendingPayemntUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\PendingPayemntUI.designer.cs">
+      <DependentUpon>PendingPayemntUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\PendingPaymentsRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PendingPaymentsRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\PendingPaymentsRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PendingPaymentsRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\PendingPaymentsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\PendingPaymentsViewer.Designer.cs">
+      <DependentUpon>PendingPaymentsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\RefundRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefundRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\RefundRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefundRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\RefundUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\RefundUI.designer.cs">
+      <DependentUpon>RefundUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\RefundViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\RefundViewer.designer.cs">
+      <DependentUpon>RefundViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\ShiftUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\ShiftUI.Designer.cs">
+      <DependentUpon>ShiftUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\ShiftViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\ShiftViewer.Designer.cs">
+      <DependentUpon>ShiftViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\ShiftWiseCollection_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShiftWiseCollection_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\ShiftWiseCollection_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShiftWiseCollection_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\TrancationsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\TrancationsViewer.Designer.cs">
+      <DependentUpon>TrancationsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\TransactionsRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionsRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\TransactionsRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionsRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\FinancialTransactionUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\FinancialTransactionUI.Designer.cs">
+      <DependentUpon>FinancialTransactionUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ExpiryRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpiryRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ExpiryRpt_Portrait.rpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpiryRpt_Portrait.rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ExpiryViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ExpiryViewer.Designer.cs">
+      <DependentUpon>ExpiryViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceViewer.Designer.cs">
+      <DependentUpon>InvoiceViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ItemssRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemssRpt.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ItemsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ItemsViewer.Designer.cs">
+      <DependentUpon>ItemsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DeadStocksRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeadStocksRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DeadStocksRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeadStocksRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DeadStocksViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DeadStocksViewer.Designer.cs">
+      <DependentUpon>DeadStocksViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DeadStockUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DeadStockUI.designer.cs">
+      <DependentUpon>DeadStockUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DiscountsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DiscountsUI.designer.cs">
+      <DependentUpon>DiscountsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DiscountsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DiscountsViewer.Designer.cs">
+      <DependentUpon>DiscountsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DiscountsRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiscountsRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\DiscountsRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiscountsRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\dlgPrintOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\dlgPrintOptions.Designer.cs">
+      <DependentUpon>dlgPrintOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ExpiryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ExpiryUI.designer.cs">
+      <DependentUpon>ExpiryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\IncomeStatementRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IncomeStatementRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\IncomeStatementRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IncomeStatementRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\IncomeStatementUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\IncomeStatementUI.Designer.cs">
+      <DependentUpon>IncomeStatementUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\IncomeStatementViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\IncomeStatementViewer.Designer.cs">
+      <DependentUpon>IncomeStatementViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\InvoiceTransactionsRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceTransactionsRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\InvoiceTransactionsRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceTransactionsRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\InvoiceTransactionsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\InvoiceTransactionsViewer.Designer.cs">
+      <DependentUpon>InvoiceTransactionsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemPurchasesReport_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemPurchasesReport_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemSalesRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemSalesRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemSalesRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemSalesRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemSalesViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemSalesViewer.Designer.cs">
+      <DependentUpon>ItemSalesViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWisePurchaseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWisePurchaseUI.designer.cs">
+      <DependentUpon>ItemWisePurchaseUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWiseRevenueRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemWiseRevenueRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWiseRevenueUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWiseRevenueUI.designer.cs">
+      <DependentUpon>ItemWiseRevenueUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWiseRevenueViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWiseRevenueViewer.Designer.cs">
+      <DependentUpon>ItemWiseRevenueViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWiseSaleUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWiseSaleUI.Designer.cs">
+      <DependentUpon>ItemWiseSaleUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ItemWiswRevenueRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemWiswRevenueRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\LowStocksRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LowStocksRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\LowStocksRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LowStocksRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\LowStockUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\LowStockUI.Designer.cs">
+      <DependentUpon>LowStockUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\LowStocsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\LowStocsViewer.Designer.cs">
+      <DependentUpon>LowStocsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NarcoticDrugsRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NarcoticDrugsRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsUI.Designer.cs">
+      <DependentUpon>NarcoticDrugsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\NarcoticDrugsViewer.Designer.cs">
+      <DependentUpon>NarcoticDrugsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PatientInvoice2Rpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientInvoice2Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientInvoiceRefundRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientInvoiceRefundRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientInvoiceRefundViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientInvoiceRefundViewer.Designer.cs">
+      <DependentUpon>PatientInvoiceRefundViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PatientInvoiceRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientInvoiceRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientInvoiceViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PatientInvoiceViewer.Designer.cs">
+      <DependentUpon>PatientInvoiceViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\frmPharmacyReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\frmPharmacyReports.Designer.cs">
+      <DependentUpon>frmPharmacyReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PatientInvoice2Rpt_NullPatient.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientInvoice2Rpt_NullPatient.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PatientInvoiceViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PatientInvoiceViewer.Designer.cs">
+      <DependentUpon>PatientInvoiceViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ProfiStatementUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ProfiStatementUI.designer.cs">
+      <DependentUpon>ProfiStatementUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ProfitStatementRpt_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfitStatementRpt_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ProfitStatementRpt_Portrair.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfitStatementRpt_Portrair.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ProfitStatementViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\ProfitStatementViewer.Designer.cs">
+      <DependentUpon>ProfitStatementViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PurchaseReportsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PurchaseReportsUI.designer.cs">
+      <DependentUpon>PurchaseReportsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PurchaseReportsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PurchaseReportsViewer.Designer.cs">
+      <DependentUpon>PurchaseReportsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PurchaseReports_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseReports_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\PurchaseReports_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseReports_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\StockStatisticsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\StockStatisticsUI.Designer.cs">
+      <DependentUpon>StockStatisticsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\StockStatisticsUI_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\StockStatisticsUI_.Designer.cs">
+      <DependentUpon>StockStatisticsUI_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\TransactionUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Pharmacy\TransactionUI.Designer.cs">
+      <DependentUpon>TransactionUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA4_Detailed_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA4_Detailed_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA4_Detailed_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA4_Detailed_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA4_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA4_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA5_Detailed_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA5_Detailed_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA5_Detailed_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA5_Detailed_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA5_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA5_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA5_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA5_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA8.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA8.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA8_Detailed.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA8_Detailed.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\POSInvoices\POSInvoiceViewer.Designer.cs">
+      <DependentUpon>POSInvoiceViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA4_Detailed_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA4_Detailed_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA4_Detailed_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA4_Detailed_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA4_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA4_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA5_Detailed_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA5_Detailed_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA5_Detailed_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA5_Detailed_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA5_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA5_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA5_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA5_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA8.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA8.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA8_Detailed.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA8_Detailed.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceViewer.Designer.cs">
+      <DependentUpon>ProcedureInvoiceViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ProcedureInvoices\ProcedureInvoiceA4_Landscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcedureInvoiceA4_Landscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaseOrderRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrderRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaseOrderViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaseOrderViewer.Designer.cs">
+      <DependentUpon>PurchaseOrderViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StockConsumptionsRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockConsumptionsRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\StockConsumptionsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\StockConsumptionsViewer.Designer.cs">
+      <DependentUpon>StockConsumptionsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StockConsumptionViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\StockConsumptionViewer.Designer.cs">
+      <DependentUpon>StockConsumptionViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StockDetailRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockDetailRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\StockDetailViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\StockDetailViewer.Designer.cs">
+      <DependentUpon>StockDetailViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StocksRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StocksRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\StocksViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\StocksViewer.Designer.cs">
+      <DependentUpon>StocksViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="Reports\StockConsumptionRpt_Portrait.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockConsumptionRpt_Portrait.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAddStockAdjustmentShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAddStockAdjustmentShortCuts.designer.cs">
+      <DependentUpon>frmAddStockAdjustmentShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAddStockConsumptionShortCut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAddStockConsumptionShortCut.designer.cs">
+      <DependentUpon>frmAddStockConsumptionShortCut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAddStockShortCusts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAddStockShortCusts.designer.cs">
+      <DependentUpon>frmAddStockShortCusts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAddSupplierShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAddSupplierShortCuts.designer.cs">
+      <DependentUpon>frmAddSupplierShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAllItemsShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmAllItemsShortCuts.designer.cs">
+      <DependentUpon>frmAllItemsShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmInvoiceShortCusts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmInvoiceShortCusts.Designer.cs">
+      <DependentUpon>frmInvoiceShortCusts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmManageStockShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmManageStockShortCuts.designer.cs">
+      <DependentUpon>frmManageStockShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmMultipleItemsShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmMultipleItemsShortCuts.designer.cs">
+      <DependentUpon>frmMultipleItemsShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmPurchaseOrderShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmPurchaseOrderShortCuts.designer.cs">
+      <DependentUpon>frmPurchaseOrderShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmPurchaseOrdersShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmPurchaseOrdersShortCuts.designer.cs">
+      <DependentUpon>frmPurchaseOrdersShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmStockAdjustmentsShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmStockAdjustmentsShortCuts.designer.cs">
+      <DependentUpon>frmStockAdjustmentsShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmStockConsumptionsShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmStockConsumptionsShortCuts.designer.cs">
+      <DependentUpon>frmStockConsumptionsShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmSuppliersShortCuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortCutDialogs\frmSuppliersShortCuts.designer.cs">
+      <DependentUpon>frmSuppliersShortCuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActivationForm.resx">
+      <DependentUpon>ActivationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSyncingUI.resx">
+      <DependentUpon>DataSyncingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataViewUI.resx">
+      <DependentUpon>DataViewUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Franchise Deployement\frmFranchiseDeployement.resx">
+      <DependentUpon>frmFranchiseDeployement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Franchise Deployement\frmMappingProgress.resx">
+      <DependentUpon>frmMappingProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Online Integration\frmOnlineCancel.resx">
+      <DependentUpon>frmOnlineCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Online Integration\frmOnlineIntegrate.resx">
+      <DependentUpon>frmOnlineIntegrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActivation.resx">
+      <DependentUpon>frmActivation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmApiLogin.resx">
+      <DependentUpon>frmApiLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogoEditor.resx">
+      <DependentUpon>frmLogoEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPackages.resx">
+      <DependentUpon>frmPackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportIssue.resx">
+      <DependentUpon>frmReportIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateNotification.resx">
+      <DependentUpon>frmUpdateNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\DlgAddStockFilter.resx">
+      <DependentUpon>DlgAddStockFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\frmContactUs.resx">
+      <DependentUpon>frmContactUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\OrderVoucherPayment\frmVoucherPayment.resx">
+      <DependentUpon>frmVoucherPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\OrderVouchers\frmOrderVoucher.resx">
+      <DependentUpon>frmOrderVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\dlgExpiry.resx">
+      <DependentUpon>dlgExpiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddManufacturer.resx">
+      <DependentUpon>frmAddManufacturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddRack.resx">
+      <DependentUpon>frmAddRack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAuditLogs.resx">
+      <DependentUpon>frmAuditLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmCamera.resx">
+      <DependentUpon>frmCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmChargeDetails.resx">
+      <DependentUpon>frmChargeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmManageStores.resx">
+      <DependentUpon>frmManageStores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddStores.resx">
+      <DependentUpon>frmAddStores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmEditItemDetails.resx">
+      <DependentUpon>frmEditItemDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmPrintStockBarcode.resx">
+      <DependentUpon>frmPrintStockBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmShortCutSalesReturn.resx">
+      <DependentUpon>frmShortCutSalesReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmStockReturnItem.resx">
+      <DependentUpon>frmStockReturnItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddStockAudit.resx">
+      <DependentUpon>frmAddStockAudit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddStockAudit3.resx">
+      <DependentUpon>frmAddStockAudit3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddTemplate.resx">
+      <DependentUpon>frmAddTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmDiscountItems.resx">
+      <DependentUpon>frmDiscountItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmEditDetails.resx">
+      <DependentUpon>frmEditDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmInvoiceLogin.resx">
+      <DependentUpon>frmInvoiceLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmStockReturn.resx">
+      <DependentUpon>frmStockReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmMissedSales.resx">
+      <DependentUpon>frmMissedSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmNoteCalculator.resx">
+      <DependentUpon>frmNoteCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmPrintBarcode.resx">
+      <DependentUpon>frmPrintBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmRackView.resx">
+      <DependentUpon>frmRackView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmSearchItem.resx">
+      <DependentUpon>frmSearchItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmManageRacks.resx">
+      <DependentUpon>frmManageRacks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\FrmStockAudit2.resx">
+      <DependentUpon>FrmStockAudit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmStockAudits.resx">
+      <DependentUpon>frmStockAudits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmTemplates.resx">
+      <DependentUpon>frmTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmManufacturers.resx">
+      <DependentUpon>frmManufacturers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\frmAddAccountExpenses.resx">
+      <DependentUpon>frmAddAccountExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\frmAddExpenseCategory.resx">
+      <DependentUpon>frmAddExpenseCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\frmExpenseCategories.resx">
+      <DependentUpon>frmExpenseCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\UserMenue\frmRestoreData.resx">
+      <DependentUpon>frmRestoreData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\Accounts\PatientLedger.resx" />
+    <EmbeddedResource Include="Reports\Accounts\PatientLedgerUI.resx">
+      <DependentUpon>PatientLedgerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Accounts\PatientLedgerViewer.resx">
+      <DependentUpon>PatientLedgerViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Accounts\PatientLedherViewer.resx">
+      <DependentUpon>PatientLedherViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\GrossProfitStatementUI.resx">
+      <DependentUpon>GrossProfitStatementUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\GrossProfitStatementViewer.resx">
+      <DependentUpon>GrossProfitStatementViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\GrossProfitstatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GrossProfitstatement.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA8_Detailed_2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA8_Detailed_2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\SalesReturnA8.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesReturnA8.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockDetailReportUI.resx">
+      <DependentUpon>StockDetailReportUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockStaticsRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockStaticsRpt.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ItemssRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemssRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Accounts\AccountUI.resx">
+      <DependentUpon>AccountUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Accounts\AccountRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AccountRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Accounts\AccountRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AccountRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Accounts\AccountViewer.resx">
+      <DependentUpon>AccountViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\StaffDetailsUIViewer.resx">
+      <DependentUpon>StaffDetailsUIViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\StaffDetialUIRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StaffDetialUIRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\StaffDetailUIRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StaffDetailUIRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\StaffDetailsUI.resx">
+      <DependentUpon>StaffDetailsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\StaffUI.resx">
+      <DependentUpon>StaffUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\SalesReturnReport.resx">
+      <DependentUpon>SalesReturnReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\SaleReturnA4_Detailed_Portrait_Update.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleReturnA4_Detailed_Portrait_Update.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\SalesReturnViewer.resx">
+      <DependentUpon>SalesReturnViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockStaticsViewer.resx">
+      <DependentUpon>StockStaticsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SearchRackItems.resx">
+      <DependentUpon>UC_SearchRackItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\frmDiscounts.resx">
+      <DependentUpon>frmDiscounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\frmAddDiscount.resx">
+      <DependentUpon>frmAddDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\frmSelectDays.resx">
+      <DependentUpon>frmSelectDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\ShopActivities\frmAccTransactions.resx">
+      <DependentUpon>frmAccTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\ShopActivities\frmAddAccTr.resx">
+      <DependentUpon>frmAddAccTr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\ShopActivities\frmPOSCosing.resx">
+      <DependentUpon>frmPOSCosing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\ShopActivities\frmStoreClosing.resx">
+      <DependentUpon>frmStoreClosing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CashSkimmingRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashSkimmingRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\DeleteInvoiceRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeleteInvoiceRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\DeleteInvoiceRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeleteInvoiceRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\DeleteInvoiceViewer.resx">
+      <DependentUpon>DeleteInvoiceViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PatientInvoicesViewer.resx">
+      <DependentUpon>PatientInvoicesViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PatientInvoicesRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientInvoicesRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmItemBarcodeViewer.resx">
+      <DependentUpon>frmItemBarcodeViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmSkimedCashViewer.resx">
+      <DependentUpon>frmSkimedCashViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemWisePurchaseViewer.resx">
+      <DependentUpon>ItemWisePurchaseViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticDrugsItemswiseRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NarcoticDrugsItemswiseRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticDrugsRpt_Landscape_Updated.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NarcoticDrugsRpt_Landscape_Updated.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticDrugsItemswiseRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NarcoticDrugsItemswiseRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticDrugsRpt_Portrait_Updated.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NarcoticDrugsRpt_Portrait_Updated.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticItemswiseSaleViewer.resx">
+      <DependentUpon>NarcoticItemswiseSaleViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticItemswiseSale.resx">
+      <DependentUpon>NarcoticItemswiseSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PurchaseOrderA8Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchaseOrderA8Rpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA4_Detailed_Portrait_Update.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA4_Detailed_Portrait_Update.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\DiscountedItemRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DiscountedItemRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\AllItemsDiscountsUI.resx">
+      <DependentUpon>AllItemsDiscountsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\AllItems_DiscountedPriceUI.resx">
+      <DependentUpon>AllItems_DiscountedPriceUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\DiscountsRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DiscountsRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\ProductExpiryRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductExpiryRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\ProductPriceRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductPriceRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\ProductExpiryUI.resx">
+      <DependentUpon>ProductExpiryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\ProductPriceUI.resx">
+      <DependentUpon>ProductPriceUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\frmProductReports.resx">
+      <DependentUpon>frmProductReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\ProfitMarginRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProfitMarginRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\DiscountedPriceUI.resx">
+      <DependentUpon>DiscountedPriceUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\DiscountedItemViewer.resx">
+      <DependentUpon>DiscountedItemViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\ProductPriceViewer.resx">
+      <DependentUpon>ProductPriceViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\ProductExpiryViewer.resx">
+      <DependentUpon>ProductExpiryViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\DiscountsViewer.resx">
+      <DependentUpon>DiscountsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\ProfitMarginViewer.resx">
+      <DependentUpon>ProfitMarginViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product\ProfitMarginUI.resx">
+      <DependentUpon>ProfitMarginUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptItemBarcode.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptItemBarcode.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockReturnDetailRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockReturnDetailRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmItemSearchShortCuts.resx">
+      <DependentUpon>frmItemSearchShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SearchItems.resx">
+      <DependentUpon>UC_SearchItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAmountConverter.resx">
+      <DependentUpon>frmAmountConverter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWaiting.resx">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmAddVital.resx">
+      <DependentUpon>frmAddVital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmAdmittedPatientTreatment.resx">
+      <DependentUpon>frmAdmittedPatientTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmAdmittedPatients.resx">
+      <DependentUpon>frmAdmittedPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Help\frmShortCutKeys.resx">
+      <DependentUpon>frmShortCutKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\IndoorMgmt\frmAddWard.resx">
+      <DependentUpon>frmAddWard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\IndoorMgmt\frmWards.resx">
+      <DependentUpon>frmWards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmAssignBed.resx">
+      <DependentUpon>frmAssignBed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmBed.resx">
+      <DependentUpon>frmBed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmBedAllocation.resx">
+      <DependentUpon>frmBedAllocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmBeds.resx">
+      <DependentUpon>frmBeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmUpdateBed.resx">
+      <DependentUpon>frmUpdateBed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmWard.resx">
+      <DependentUpon>frmWard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indoor\Menu\frmWards.resx">
+      <DependentUpon>frmWards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Manage Modules\frmManageModules.resx">
+      <DependentUpon>frmManageModules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddCategory.resx">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddPatient.resx">
+      <DependentUpon>frmAddPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddStock.resx">
+      <DependentUpon>frmAddStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddStock2.resx">
+      <DependentUpon>frmAddStock2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddSupplier.resx">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddTag.resx">
+      <DependentUpon>frmAddTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmAllItems.resx">
+      <DependentUpon>frmAllItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmChequeInfo.resx">
+      <DependentUpon>frmChequeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmConsumeStock.resx">
+      <DependentUpon>frmConsumeStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmConsumeStocks.resx">
+      <DependentUpon>frmConsumeStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmConsumeStockUpdate.resx">
+      <DependentUpon>frmConsumeStockUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmDrugReturn.resx">
+      <DependentUpon>frmDrugReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmInvoice.resx">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmSalesReturn.resx">
+      <DependentUpon>frmSalesReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmItemInfo.resx">
+      <DependentUpon>frmItemInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmItems.resx">
+      <DependentUpon>frmItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmManageStocks.resx">
+      <DependentUpon>frmManageStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmMultipleItems.resx">
+      <DependentUpon>frmMultipleItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmPatientInvoices.resx">
+      <DependentUpon>frmPatientInvoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmPatientProfile.resx">
+      <DependentUpon>frmPatientProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmPatients.resx">
+      <DependentUpon>frmPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmPurchaseOrder.resx">
+      <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmPurchaseOrderDetail.resx">
+      <DependentUpon>frmPurchaseOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmPurchaseOrders.resx">
+      <DependentUpon>frmPurchaseOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmSearchPatient.resx">
+      <DependentUpon>frmSearchPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmSearchPatients.resx">
+      <DependentUpon>frmSearchPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmShowSerialKey.resx">
+      <DependentUpon>frmShowSerialKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmStockAdjustment.resx">
+      <DependentUpon>frmStockAdjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmStockAdjustments.resx">
+      <DependentUpon>frmStockAdjustments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmStockConsumption.resx">
+      <DependentUpon>frmStockConsumption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmStockConsumptions.resx">
+      <DependentUpon>frmStockConsumptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmStockPayments.resx">
+      <DependentUpon>frmStockPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmSupplierInfo.resx">
+      <DependentUpon>frmSupplierInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmSuppliers.resx">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Pharmacy\frmInvoiceHistory.resx">
+      <DependentUpon>frmInvoiceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\AddProcedure.resx">
+      <DependentUpon>AddProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\frmAddDepartment.resx">
+      <DependentUpon>frmAddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\frmDepartments.resx">
+      <DependentUpon>frmDepartments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\frmProcedureInvoice2.resx">
+      <DependentUpon>frmProcedureInvoice2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\Preferences\ProcedureList.resx">
+      <DependentUpon>ProcedureList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\UserMenue\AdminSetting.resx">
+      <DependentUpon>AdminSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Accounts\BillPaymentsUI.resx">
+      <DependentUpon>BillPaymentsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Accounts\frmAccountsReportsUI.resx">
+      <DependentUpon>frmAccountsReportsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AdjustmentsRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AdjustmentsRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AdjustmentsViewer.resx">
+      <DependentUpon>AdjustmentsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\DeletedInvoicesUI.resx">
+      <DependentUpon>DeletedInvoicesUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\frmFinancialReportsUI.resx">
+      <DependentUpon>frmFinancialReportsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\PaymentModeRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentModeRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\PaymentModeRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentModeRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\PaymentModeUI.resx">
+      <DependentUpon>PaymentModeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\PaymentModeViewer.resx">
+      <DependentUpon>PaymentModeViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\PendingPayemntUI.resx">
+      <DependentUpon>PendingPayemntUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\PendingPaymentsRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PendingPaymentsRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\PendingPaymentsRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PendingPaymentsRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\PendingPaymentsViewer.resx">
+      <DependentUpon>PendingPaymentsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\RefundRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RefundRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\RefundRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RefundRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\RefundUI.resx">
+      <DependentUpon>RefundUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\RefundViewer.resx">
+      <DependentUpon>RefundViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\ShiftUI.resx">
+      <DependentUpon>ShiftUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\ShiftViewer.resx">
+      <DependentUpon>ShiftViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\ShiftWiseCollection_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShiftWiseCollection_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\ShiftWiseCollection_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShiftWiseCollection_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\TrancationsViewer.resx">
+      <DependentUpon>TrancationsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\TransactionsRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TransactionsRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\TransactionsRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TransactionsRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\FinancialTransactionUI.resx">
+      <DependentUpon>FinancialTransactionUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ExpiryRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExpiryRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ExpiryRpt_Portrait.rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExpiryRpt_Portrait.rpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ExpiryViewer.resx">
+      <DependentUpon>ExpiryViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceViewer.resx">
+      <DependentUpon>InvoiceViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ItemssRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemssRpt.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ItemsViewer.resx">
+      <DependentUpon>ItemsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\DeadStocksRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeadStocksRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\DeadStocksRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeadStocksRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\DeadStocksViewer.resx">
+      <DependentUpon>DeadStocksViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\DeadStockUI.resx">
+      <DependentUpon>DeadStockUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\DiscountsUI.resx">
+      <DependentUpon>DiscountsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\DiscountsViewer.resx">
+      <DependentUpon>DiscountsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\DiscountsRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DiscountsRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\DiscountsRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DiscountsRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\dlgPrintOptions.resx">
+      <DependentUpon>dlgPrintOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ExpiryUI.resx">
+      <DependentUpon>ExpiryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\IncomeStatementRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IncomeStatementRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\IncomeStatementRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IncomeStatementRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\IncomeStatementUI.resx">
+      <DependentUpon>IncomeStatementUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\IncomeStatementViewer.resx">
+      <DependentUpon>IncomeStatementViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\InvoiceTransactionsRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceTransactionsRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\InvoiceTransactionsRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceTransactionsRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\InvoiceTransactionsViewer.resx">
+      <DependentUpon>InvoiceTransactionsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemPurchasesReport_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemPurchasesReport_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemPurchasesReport_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemSalesRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemSalesRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemSalesRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemSalesRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemSalesViewer.resx">
+      <DependentUpon>ItemSalesViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemWisePurchaseUI.resx">
+      <DependentUpon>ItemWisePurchaseUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemWiseRevenueRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemWiseRevenueRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemWiseRevenueUI.resx">
+      <DependentUpon>ItemWiseRevenueUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemWiseRevenueViewer.resx">
+      <DependentUpon>ItemWiseRevenueViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemWiseSaleUI.resx">
+      <DependentUpon>ItemWiseSaleUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ItemWiswRevenueRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemWiswRevenueRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\LowStocksRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LowStocksRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\LowStocksRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LowStocksRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\LowStockUI.resx">
+      <DependentUpon>LowStockUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\LowStocsViewer.resx">
+      <DependentUpon>LowStocsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticDrugsRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NarcoticDrugsRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticDrugsRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NarcoticDrugsRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticDrugsUI.resx">
+      <DependentUpon>NarcoticDrugsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\NarcoticDrugsViewer.resx">
+      <DependentUpon>NarcoticDrugsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\PatientInvoice2Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientInvoice2Rpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PatientInvoiceRefundRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientInvoiceRefundRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PatientInvoiceRefundViewer.resx">
+      <DependentUpon>PatientInvoiceRefundViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PatientInvoiceRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientInvoiceRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PatientInvoiceViewer.resx">
+      <DependentUpon>PatientInvoiceViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\frmPharmacyReports.resx">
+      <DependentUpon>frmPharmacyReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\PatientInvoice2Rpt_NullPatient.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatientInvoice2Rpt_NullPatient.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\PatientInvoiceViewer.resx">
+      <DependentUpon>PatientInvoiceViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ProfiStatementUI.resx">
+      <DependentUpon>ProfiStatementUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ProfitStatementRpt_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProfitStatementRpt_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ProfitStatementRpt_Portrair.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProfitStatementRpt_Portrair.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\ProfitStatementViewer.resx">
+      <DependentUpon>ProfitStatementViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\PurchaseReportsUI.resx">
+      <DependentUpon>PurchaseReportsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\PurchaseReportsViewer.resx">
+      <DependentUpon>PurchaseReportsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\PurchaseReports_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchaseReports_Landscape3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\PurchaseReports_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchaseReports_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\StockStatisticsUI.resx">
+      <DependentUpon>StockStatisticsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\StockStatisticsUI_.resx">
+      <DependentUpon>StockStatisticsUI_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pharmacy\TransactionUI.resx">
+      <DependentUpon>TransactionUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA4_Detailed_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA4_Detailed_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA4_Detailed_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA4_Detailed_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA4_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA4_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA4_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA5_Detailed_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA5_Detailed_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA5_Detailed_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA5_Detailed_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA5_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA5_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA5_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA5_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA8.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA8.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA8_Detailed.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA8_Detailed.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceViewer.resx">
+      <DependentUpon>POSInvoiceViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA4_Detailed_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA4_Detailed_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA4_Detailed_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA4_Detailed_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA4_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA4_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA5_Detailed_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA5_Detailed_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA5_Detailed_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA5_Detailed_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA5_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA5_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA5_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA5_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA8.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA8.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA8_Detailed.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA8_Detailed.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceViewer.resx">
+      <DependentUpon>ProcedureInvoiceViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProcedureInvoices\ProcedureInvoiceA4_Landscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProcedureInvoiceA4_Landscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PurchaseOrderRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchaseOrderRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PurchaseOrderViewer.resx">
+      <DependentUpon>PurchaseOrderViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockConsumptionsRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockConsumptionsRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockConsumptionsViewer.resx">
+      <DependentUpon>StockConsumptionsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockConsumptionViewer.resx">
+      <DependentUpon>StockConsumptionViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockDetailRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockDetailRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockDetailViewer.resx">
+      <DependentUpon>StockDetailViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StocksRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StocksRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StocksViewer.resx">
+      <DependentUpon>StocksViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StockConsumptionRpt_Portrait.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockConsumptionRpt_Portrait.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmAddStockAdjustmentShortCuts.resx">
+      <DependentUpon>frmAddStockAdjustmentShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmAddStockConsumptionShortCut.resx">
+      <DependentUpon>frmAddStockConsumptionShortCut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmAddStockShortCusts.resx">
+      <DependentUpon>frmAddStockShortCusts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmAddSupplierShortCuts.resx">
+      <DependentUpon>frmAddSupplierShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmAllItemsShortCuts.resx">
+      <DependentUpon>frmAllItemsShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmInvoiceShortCusts.resx">
+      <DependentUpon>frmInvoiceShortCusts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmManageStockShortCuts.resx">
+      <DependentUpon>frmManageStockShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmMultipleItemsShortCuts.resx">
+      <DependentUpon>frmMultipleItemsShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmPurchaseOrderShortCuts.resx">
+      <DependentUpon>frmPurchaseOrderShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmPurchaseOrdersShortCuts.resx">
+      <DependentUpon>frmPurchaseOrdersShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmStockAdjustmentsShortCuts.resx">
+      <DependentUpon>frmStockAdjustmentsShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmStockConsumptionsShortCuts.resx">
+      <DependentUpon>frmStockConsumptionsShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortCutDialogs\frmSuppliersShortCuts.resx">
+      <DependentUpon>frmSuppliersShortCuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Data\BarcodesSheet.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\EverCarePharmacy.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Hameed_Hospital_Pharmacy_updaeted.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\ItemsSheet.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\ItemsSheet_1.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Khizar Hospital.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\pharmacy_Def_2.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="dsShared.xsc">
+      <DependentUpon>dsShared.xsd</DependentUpon>
+    </None>
+    <None Include="dsShared.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsShared.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsShared.xss">
+      <DependentUpon>dsShared.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Pharmacy.UI_1_TemporaryKey.pfx" />
+    <None Include="Pharmacy.UI_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\dsCommon.dtItemsDataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Reports\Accounts\PatientLedgerRpt.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Reports\dsPharmacyReports.xsc">
+      <DependentUpon>dsPharmacyReports.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\dsPharmacyReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPharmacyReports1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.11.1">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2012 Express LocalDB</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pharmacy.Core\RMS.Core.csproj">
+      <Project>{e8f49a7a-4c9a-4bad-848f-9eefe1662944}</Project>
+      <Name>RMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pharmacy.Infrastructure\RMS.Infrastructure.csproj">
+      <Project>{bab91d22-49be-4ff0-abf2-058f879aedce}</Project>
+      <Name>RMS.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SergeUtils\SergeUtils.csproj">
+      <Project>{25438301-DDF3-4EFD-8C17-4AA3249CC9E0}</Project>
+      <Name>SergeUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\dsPharmacyReports.xss">
+      <DependentUpon>dsPharmacyReports.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\factory.png" />
+    <None Include="Resources\logout.png" />
+    <Content Include="289045946_332584259044099_3104131647870991090_n.ico" />
+    <None Include="bin\Debug\Images\202303141514537322.jpg" />
+    <Content Include="Data\HWGame.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HWlogoWithoutText.ico" />
+    <None Include="Resources\xyz.png" />
+    <Content Include="logo121.ico" />
+    <None Include="Resources\289045946_332584259044099_3104131647870991090_n.jpg" />
+    <None Include="Resources\289045946_332584259044099_3104131647870991090_n-removebg-preview.png" />
+    <None Include="Resources\202303141514537322-removebg-preview.png" />
+    <Content Include="Removal-954.ico" />
+    <Content Include="Resources\abc.ico" />
+    <None Include="Resources\transactions.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\Ripple-1s-200px.gif" />
+    <None Include="Resources\icons8-setting-16.png" />
+    <None Include="Resources\gif-animations-replace-loading-screen-10.gif" />
+    <None Include="Resources\pexels-codioful-7130475.jpg" />
+    <None Include="Resources\icons8-male-user-ink-96.png" />
+    <None Include="Resources\Style 1.png" />
+    <None Include="Resources\style 2.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\Removal-9542.png" />
+    <None Include="Resources\Removal-954.png" />
+    <None Include="Resources\Removal-9541.png" />
+    <Content Include="Theme\completed.png" />
+    <Content Include="Theme\dashboard %28-1.png" />
+    <Content Include="Theme\dashboard %281%29.png" />
+    <Content Include="Theme\Ellipse 30.png" />
+    <Content Include="Theme\Ellipse 31.png" />
+    <Content Include="Theme\Ellipse 32.png" />
+    <Content Include="Theme\ICloudWithoutText.png" />
+    <Content Include="Theme\Icon awesome-calendar-alt.png" />
+    <Content Include="Theme\Icon feather-download.png" />
+    <Content Include="Theme\Icon feather-edit.png" />
+    <Content Include="Theme\Icon feather-eye.png" />
+    <Content Include="Theme\Icon feather-printer.png" />
+    <Content Include="Theme\Icon ionic-ios-information-circle-1.png" />
+    <Content Include="Theme\Icon ionic-ios-information-circle.png" />
+    <Content Include="Theme\Icon ionic-ios-settings-1.png" />
+    <Content Include="Theme\Icon ionic-ios-settings.png" />
+    <Content Include="Theme\Icon ionic-md-notifications-1.png" />
+    <Content Include="Theme\Icon ionic-md-notifications.png" />
+    <Content Include="Theme\Icon metro-calendar.png" />
+    <Content Include="Theme\invoice.ico" />
+    <Content Include="Theme\invoice.png" />
+    <Content Include="Theme\MenuIcons\MenuExpand2x.png" />
+    <Content Include="Theme\MenuIcons\MenuExpand.png" />
+    <Content Include="Theme\MenuIcons\MenuCollapse2x.png" />
+    <Content Include="Theme\MenuIcons\MenuCollapse.png" />
+    <Content Include="Theme\MenuIcons\HWLogo2x.png" />
+    <Content Include="Theme\MenuIcons\HWLogo.png" />
+    <Content Include="Theme\MenuIcons\customer %281%29%402x.png" />
+    <Content Include="Theme\MenuIcons\customer %281%29-1%402x.png" />
+    <Content Include="Theme\MenuIcons\customer %281%29-1.png" />
+    <Content Include="Theme\MenuIcons\customer %281%29.png" />
+    <Content Include="Theme\MenuIcons\Group 2625%402x.png" />
+    <Content Include="Theme\MenuIcons\Group 2625.png" />
+    <Content Include="Theme\MenuIcons\Group 2626%402x.png" />
+    <Content Include="Theme\MenuIcons\Group 2626.png" />
+    <Content Include="Theme\MenuIcons\headphones%402x.png" />
+    <Content Include="Theme\MenuIcons\headphones-1%402x.png" />
+    <Content Include="Theme\MenuIcons\headphones-1.png" />
+    <Content Include="Theme\MenuIcons\headphones.png" />
+    <Content Include="Theme\MenuIcons\Icon ionic-ios-arrow-down%402x.png" />
+    <Content Include="Theme\MenuIcons\Icon ionic-ios-arrow-down-1%402x.png" />
+    <Content Include="Theme\MenuIcons\Icon ionic-ios-arrow-down-1.png" />
+    <Content Include="Theme\MenuIcons\Icon ionic-ios-arrow-down-2%402x.png" />
+    <Content Include="Theme\MenuIcons\Icon ionic-ios-arrow-down-2.png" />
+    <Content Include="Theme\MenuIcons\Icon ionic-ios-arrow-down-3%402x.png" />
+    <Content Include="Theme\MenuIcons\Icon ionic-ios-arrow-down-3.png" />
+    <Content Include="Theme\MenuIcons\Icon ionic-ios-arrow-down.png" />
+    <Content Include="Theme\MenuIcons\healthwire_logo.png" />
+    <Content Include="Theme\MenuIcons\patient %283%29%402x.png" />
+    <Content Include="Theme\MenuIcons\patient %283%29-1%402x.png" />
+    <Content Include="Theme\MenuIcons\patient %283%29-1.png" />
+    <Content Include="Theme\MenuIcons\patient %283%29.png" />
+    <Content Include="Theme\MenuIcons\pharmacy%402x.png" />
+    <Content Include="Theme\MenuIcons\pharmacy-1%402x.png" />
+    <Content Include="Theme\MenuIcons\pharmacy-1.png" />
+    <Content Include="Theme\MenuIcons\pharmacy.png" />
+    <Content Include="Theme\MenuIcons\preference%402x.png" />
+    <Content Include="Theme\MenuIcons\preference-1%402x.png" />
+    <Content Include="Theme\MenuIcons\preference-1.png" />
+    <Content Include="Theme\MenuIcons\preference.png" />
+    <Content Include="Theme\MenuIcons\profit-report %281%29%402x.png" />
+    <Content Include="Theme\MenuIcons\profit-report %281%29-1%402x.png" />
+    <Content Include="Theme\MenuIcons\profit-report %281%29-1.png" />
+    <Content Include="Theme\MenuIcons\profit-report %281%29.png" />
+    <Content Include="Theme\MenuIcons\XMLID_873_%402x.png" />
+    <Content Include="Theme\MenuIcons\XMLID_873_-1%402x.png" />
+    <Content Include="Theme\MenuIcons\XMLID_873_-1.png" />
+    <Content Include="Theme\MenuIcons\XMLID_873_.png" />
+    <Content Include="Theme\money.png" />
+    <Content Include="Theme\outline.png" />
+    <Content Include="Theme\Path 1187.png" />
+    <Content Include="Theme\printer.png" />
+    <Content Include="Theme\receipt.png" />
+    <Content Include="Theme\refresh-2-24.png" />
+    <Content Include="Theme\refresh-2-32.png" />
+    <Content Include="Theme\ReportIcons\Account\finance%402x.png" />
+    <Content Include="Theme\ReportIcons\Account\finance.png" />
+    <Content Include="Theme\ReportIcons\Account\hand%402x.png" />
+    <Content Include="Theme\ReportIcons\Account\hand.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2598%402x.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2598.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2600%402x.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2600.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2601%402x.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2601.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2602%402x.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2602.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2603%402x.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2603.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2604%402x.png" />
+    <Content Include="Theme\ReportIcons\Financial\Group 2604.png" />
+    <Content Include="Theme\ReportIcons\Financial\linear color%402x.png" />
+    <Content Include="Theme\ReportIcons\Financial\linear color.png" />
+    <Content Include="Theme\ReportIcons\img1.png" />
+    <Content Include="Theme\ReportIcons\img2.jpg" />
+    <Content Include="Theme\ReportIcons\img3.jpg" />
+    <Content Include="Theme\ReportIcons\img4.jpg" />
+    <Content Include="Theme\ReportIcons\inv_footer_jpg.jpg" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2516%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2516.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2585%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2585.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2586%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2586.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2587%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2587.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2588%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2588.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2589%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2589.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2590%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2590.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2591%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2591.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2592%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2592.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2593%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2593.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2594%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2594.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2595%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2595.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2596%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Group 2596.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\invFooter_1.bmp" />
+    <Content Include="Theme\ReportIcons\Pharmacy\invFooter_1.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\invFooter_jpg.jpg" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Path 1251%402x.png" />
+    <Content Include="Theme\ReportIcons\Pharmacy\Path 1251.png" />
+    <Content Include="Theme\ReportIcons\Product\Group 690%402x.png" />
+    <Content Include="Theme\ReportIcons\Product\Group 690.png" />
+    <Content Include="Theme\ReportIcons\Product\profit-report%402x.png" />
+    <Content Include="Theme\ReportIcons\Product\profit-report.png" />
+    <Content Include="Theme\ReportIcons\Product\report %281%29%402x.png" />
+    <Content Include="Theme\ReportIcons\Product\report %281%29.png" />
+    <Content Include="Theme\ReportIcons\Product\tag%402x.png" />
+    <Content Include="Theme\ReportIcons\Product\tag.png" />
+    <Content Include="Theme\shopping-cart.png" />
+    <Content Include="Theme\splashCloud.png" />
+    <Content Include="Theme\trash.png" />
+    <Content Include="Theme\waitingWheel.gif" />
+    <Content Include="Theme\exce24.png" />
+    <Content Include="Theme\excel-144.png" />
+    <Content Include="Theme\excel-48.png" />
+    <Content Include="Theme\excel-96.png" />
+    <Content Include="Theme\girdview26.png" />
+    <Content Include="Theme\gridview40.png" />
+    <Content Include="Theme\gridview48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Theme\list36.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Theme\listView48.png" />
+    <Content Include="Theme\pdf-48.png" />
+    <Content Include="Theme\pdf-96.png" />
+    <Content Include="Theme\pdf24.png" />
+    <Content Include="Theme\Preview.png" />
+    <Content Include="Theme\InvoiceHistory.png" />
+    <Content Include="Theme\POS.png" />
+    <Content Include="Theme\Drugreturn.png" />
+    <Content Include="Theme\Drugreturn32.png" />
+    <Content Include="Theme\DrugReturn16.png" />
+    <Content Include="Theme\PrintFormats\header_footer_1.png" />
+    <Content Include="Theme\PrintFormats\header_footer_2.png" />
+    <Content Include="Theme\PrintFormats\header_footer_3.png" />
+    <Content Include="Theme\PrintFormats\header_footer_4.png" />
+    <Content Include="Theme\PrintFormats\header_footer_5.png" />
+    <Content Include="Theme\PrintFormats\header_footer_6.png" />
+    <Content Include="Theme\PrintFormats\patient_details_1.png" />
+    <Content Include="Theme\PrintFormats\patient_details_2.png" />
+    <Content Include="Theme\PrintFormats\patient_details_3.png" />
+    <Content Include="Theme\PrintFormats\patient_details_4.png" />
+    <Content Include="Theme\PrintFormats\patient_details_5.png" />
+    <Content Include="Theme\PrintFormats\patient_details_6.png" />
+    <Content Include="Theme\ReportIcons\deadstock.png" />
+    <Content Include="Theme\ReportIcons\discount.png" />
+    <Content Include="Theme\ReportIcons\expiry.png" />
+    <Content Include="Theme\gridview36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Theme\ReportIcons\incomestatement.png" />
+    <Content Include="Theme\ReportIcons\itemsale.png" />
+    <Content Include="Theme\ReportIcons\Low Stock.png" />
+    <Content Include="Theme\ReportIcons\narcotic.png" />
+    <Content Include="Theme\ReportIcons\profitstatement.png" />
+    <Content Include="Theme\ReportIcons\purchasereport.png" />
+    <Content Include="Theme\ReportIcons\statistics.png" />
+    <Content Include="Theme\ReportIcons\transactions-1.png" />
+    <Content Include="Theme\ReportIcons\transactions.png" />
+    <Content Include="Theme\Suppliersw.png" />
+    <Content Include="Theme\PurchaseOrders.png" />
+    <Content Include="Theme\ConsumeStock.png" />
+    <Content Include="Theme\StockAdjustments.png" />
+    <Content Include="Theme\HealthWireInstallationImage.png" />
+    <Content Include="Theme\pills.png" />
+    <Content Include="Theme\testLogo1.jpg" />
+    <Content Include="Theme\HWlogoWithoutText.ico" />
+    <Content Include="Theme\HWlogoWithoutText.jpg" />
+    <Content Include="Theme\HWlogoWithoutText.png" />
+    <Content Include="Theme\info_24px.png" />
+    <Content Include="Theme\info_48px.png" />
+    <Content Include="Theme\Refresh_16.png" />
+    <Content Include="Theme\Refresh_512.png" />
+    <Content Include="Theme\transactions.png" />
+    <Content Include="Theme\trend.png" />
+    <Content Include="transactions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="DBFile\" />
+    <Folder Include="Temp\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.3.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.3.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.3.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.3.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
+</Project>

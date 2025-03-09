@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Pharmacy.UI
+{
+    public partial class DataViewUI : Form
+    {
+        public DataViewUI(string json)
+        {
+            InitializeComponent();
+
+            TreeViewExtensions.AddJsonToTreeView(treeView, json);
+
+            treeView.ExpandAll();
+
+        }
+        
+    }
+}
