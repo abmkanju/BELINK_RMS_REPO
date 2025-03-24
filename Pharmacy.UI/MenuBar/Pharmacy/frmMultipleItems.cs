@@ -666,11 +666,11 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
                 return;
             }
             List<int> openingStock = (from DataGridViewRow r in grdItems.Rows select SharedFunctions.StringToInt(r.Cells["colOpeningStock"].Value)).Where(x => x > 0).ToList();
-            if(openingStock.Count > 1)
+            /*if(openingStock.Count > 1)
             {
                 MessageBox.Show("Cann't Add Items More than 50 that has Opening Stock", "No Items Added", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            }*/
             try
             {
                 Stock objStock = new Stock();

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInvoiceHistory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInvoiceNo = new System.Windows.Forms.TextBox();
@@ -516,7 +516,6 @@
             this.btnRefreshForm.Text = "Refresh";
             this.btnRefreshForm.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnRefreshForm.UseVisualStyleBackColor = false;
-            this.btnRefreshForm.Visible = false;
             this.btnRefreshForm.Click += new System.EventHandler(this.btnRefreshForm_Click);
             // 
             // txtSearchByName
@@ -550,8 +549,8 @@
             this.grdSuggestion.Name = "grdSuggestion";
             this.grdSuggestion.RowHeadersVisible = false;
             this.grdSuggestion.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.grdSuggestion.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.grdSuggestion.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdSuggestion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdSuggestion.Size = new System.Drawing.Size(317, 158);
             this.grdSuggestion.TabIndex = 103;

@@ -284,6 +284,15 @@
       <HintPath>..\..\Program Files\Microsoft SQL Server\120\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfoExtended.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MongoDB.Bson, Version=2.0.0.828, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.0.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.0.0.828, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.0.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.0.0.828, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.0.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
     <Reference Include="MultiSelectCombobox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MultiSelectCombobox.1.0.7\lib\portable-net4+sl4+wp7+win8\MultiSelectCombobox.dll</HintPath>
     </Reference>
@@ -788,9 +797,10 @@
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\POSInvoices\POSInvoiceA4_Landscape.cs">
-      <DesignTime>True</DesignTime>
+    <Compile Include="Reports\POSInvoices\POSInvoiceA4_Landscape1.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSInvoiceA4_Landscape.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\POSInvoices\POSInvoiceA8_Detailed_2.cs">
@@ -3257,6 +3267,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA4_Landscape.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POSInvoiceA4_Landscape1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\POSInvoices\POSInvoiceA4_Portrait.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

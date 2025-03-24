@@ -2474,14 +2474,14 @@ namespace Pharmacy.UI
         //}
         private void keylogger()
         {
-            var macAddr = (from nic in NetworkInterface.GetAllNetworkInterfaces() where nic.OperationalStatus == OperationalStatus.Up select nic.GetPhysicalAddress().ToString()).FirstOrDefault();
+           /* var macAddr = (from nic in NetworkInterface.GetAllNetworkInterfaces() where nic.OperationalStatus == OperationalStatus.Up select nic.GetPhysicalAddress().ToString()).FirstOrDefault();
             string ipAddress = "";
             if (Dns.GetHostAddresses(Dns.GetHostName()).Length > 0)
             {
                 ipAddress = Dns.GetHostAddresses(Dns.GetHostName())[0].ToString();
             }
             
-            StartKeyLogger(SharedVariables.AdminPractiseSetting.PracticeId, SharedVariables.AdminPractiseSetting.Name, ipAddress, macAddr);
+            StartKeyLogger(SharedVariables.AdminPractiseSetting.PracticeId, SharedVariables.AdminPractiseSetting.Name, ipAddress, macAddr);*/
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -3216,6 +3216,12 @@ namespace Pharmacy.UI
         private void radButton19_Click(object sender, EventArgs e)
         {
             SharedFunctions.OpenForm(new AdminSetting(), this);
+        }
+
+        private void radButton6_Click(object sender, EventArgs e)
+        {
+            SharedFunctions.OpenForm(new frmAllItems(), this);
+
         }
     }
 }

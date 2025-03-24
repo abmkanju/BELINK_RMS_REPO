@@ -30,14 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInvoice));
-            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem1 = new Telerik.WinControls.UI.RadCheckedListDataItem();
-            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem2 = new Telerik.WinControls.UI.RadCheckedListDataItem();
-            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem3 = new Telerik.WinControls.UI.RadCheckedListDataItem();
-            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem4 = new Telerik.WinControls.UI.RadCheckedListDataItem();
-            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem5 = new Telerik.WinControls.UI.RadCheckedListDataItem();
-            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem6 = new Telerik.WinControls.UI.RadCheckedListDataItem();
-            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem7 = new Telerik.WinControls.UI.RadCheckedListDataItem();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,6 +39,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInvoice));
+            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem1 = new Telerik.WinControls.UI.RadCheckedListDataItem();
+            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem2 = new Telerik.WinControls.UI.RadCheckedListDataItem();
+            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem3 = new Telerik.WinControls.UI.RadCheckedListDataItem();
+            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem4 = new Telerik.WinControls.UI.RadCheckedListDataItem();
+            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem5 = new Telerik.WinControls.UI.RadCheckedListDataItem();
+            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem6 = new Telerik.WinControls.UI.RadCheckedListDataItem();
+            Telerik.WinControls.UI.RadCheckedListDataItem radCheckedListDataItem7 = new Telerik.WinControls.UI.RadCheckedListDataItem();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblSearchItem = new System.Windows.Forms.Label();
             this.btnAddItem = new System.Windows.Forms.Button();
@@ -221,33 +221,6 @@
             this.btnNextInvoice = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.grdItems = new MenuBar.Pharmacy.MyDGV();
-            this.label24 = new System.Windows.Forms.Label();
-            this.canceltextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uC_SearchItems1 = new UC_SearchItems();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radCalculatorDropDown1 = new Telerik.WinControls.UI.RadCalculatorDropDown();
-            this.pbInfo = new System.Windows.Forms.PictureBox();
-            this.InvoiceItemsToolStrip = new Telerik.WinControls.UI.RadCheckedDropDownList();
             this.SrNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvoiceItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -280,6 +253,33 @@
             this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colReturnToggle = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colQuantityFirst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label24 = new System.Windows.Forms.Label();
+            this.canceltextBox = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uC_SearchItems1 = new UC_SearchItems();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.radCalculatorDropDown1 = new Telerik.WinControls.UI.RadCalculatorDropDown();
+            this.pbInfo = new System.Windows.Forms.PictureBox();
+            this.InvoiceItemsToolStrip = new Telerik.WinControls.UI.RadCheckedDropDownList();
             this.pnlLoadedInvoiceData.SuspendLayout();
             this.pnlPatientDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdSuggestion)).BeginInit();
@@ -2520,7 +2520,7 @@
             this.pnlContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.pnlContainer.BackColor = System.Drawing.Color.AliceBlue;
             this.pnlContainer.Controls.Add(this.tableLayoutPanel1);
             this.pnlContainer.Controls.Add(this.label8);
             this.pnlContainer.Controls.Add(this.panel2);
@@ -2606,214 +2606,6 @@
             this.grdItems.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.grdItems_RowsRemoved);
             this.grdItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdItems_KeyDown);
             this.grdItems.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.grdItems_PreviewKeyDown);
-            // 
-            // label24
-            // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(174, 406);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(82, 14);
-            this.label24.TabIndex = 1011;
-            this.label24.Text = "Cancel Reason";
-            this.label24.Visible = false;
-            // 
-            // canceltextBox
-            // 
-            this.canceltextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.canceltextBox.Location = new System.Drawing.Point(177, 423);
-            this.canceltextBox.Multiline = true;
-            this.canceltextBox.Name = "canceltextBox";
-            this.canceltextBox.Size = new System.Drawing.Size(136, 73);
-            this.canceltextBox.TabIndex = 1010;
-            this.canceltextBox.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ItemId";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "ITEM NAME";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.HeaderText = "BacthId";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "BATCH";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            this.dataGridViewTextBoxColumn4.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "QUANTITY";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 200;
-            // 
-            // uC_SearchItems1
-            // 
-            this.uC_SearchItems1.BackColor = System.Drawing.Color.White;
-            this.uC_SearchItems1.Location = new System.Drawing.Point(18, 88);
-            this.uC_SearchItems1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uC_SearchItems1.Name = "uC_SearchItems1";
-            this.uC_SearchItems1.PageNo = 0;
-            this.uC_SearchItems1.SelectedItemId = 0;
-            this.uC_SearchItems1.SelectedItemName = null;
-            this.uC_SearchItems1.Size = new System.Drawing.Size(274, 23);
-            this.uC_SearchItems1.StoreId = 0;
-            this.uC_SearchItems1.TabIndex = 3;
-            this.uC_SearchItems1.Load += new System.EventHandler(this.uC_SearchItems1_Load);
-            this.uC_SearchItems1.Enter += new System.EventHandler(this.uC_SearchItems1_Enter);
-            this.uC_SearchItems1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uC_SearchItems1_KeyDown);
-            this.uC_SearchItems1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.uC_SearchItems1_KeyPress);
-            this.uC_SearchItems1.Leave += new System.EventHandler(this.uC_SearchItems1_Leave);
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "ConsumptionTypeId";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.HeaderText = "Item";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            // 
-            // radCalculatorDropDown1
-            // 
-            this.radCalculatorDropDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radCalculatorDropDown1.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.radCalculatorDropDown1.Location = new System.Drawing.Point(1126, 83);
-            this.radCalculatorDropDown1.Name = "radCalculatorDropDown1";
-            this.radCalculatorDropDown1.Size = new System.Drawing.Size(187, 24);
-            this.radCalculatorDropDown1.TabIndex = 1031;
-            this.radCalculatorDropDown1.TabStop = false;
-            this.radCalculatorDropDown1.Value = "0";
-            // 
-            // pbInfo
-            // 
-            this.pbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbInfo.Image = ((System.Drawing.Image)(resources.GetObject("pbInfo.Image")));
-            this.pbInfo.Location = new System.Drawing.Point(1314, 1);
-            this.pbInfo.Name = "pbInfo";
-            this.pbInfo.Size = new System.Drawing.Size(29, 30);
-            this.pbInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbInfo.TabIndex = 99;
-            this.pbInfo.TabStop = false;
-            this.pbInfo.Visible = false;
-            this.pbInfo.Click += new System.EventHandler(this.pbInfo_Click);
-            // 
-            // InvoiceItemsToolStrip
-            // 
-            this.InvoiceItemsToolStrip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.InvoiceItemsToolStrip.DefaultItemsCountInDropDown = 10;
-            this.InvoiceItemsToolStrip.DropDownAnimationEasing = Telerik.WinControls.RadEasingType.InQuart;
-            this.InvoiceItemsToolStrip.EnableAnalytics = false;
-            this.InvoiceItemsToolStrip.EnableGestures = false;
-            this.InvoiceItemsToolStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            radCheckedListDataItem1.Text = "CheckedItem 1";
-            radCheckedListDataItem2.Text = "CheckedItem 2";
-            radCheckedListDataItem3.Text = "CheckedItem 3";
-            radCheckedListDataItem4.Text = "CheckedItem 4";
-            radCheckedListDataItem5.Text = "CheckedItem 5";
-            radCheckedListDataItem6.Text = "CheckedItem 6";
-            radCheckedListDataItem7.Text = "CheckedItem 7";
-            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem1);
-            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem2);
-            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem3);
-            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem4);
-            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem5);
-            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem6);
-            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem7);
-            this.InvoiceItemsToolStrip.Location = new System.Drawing.Point(1004, 84);
-            this.InvoiceItemsToolStrip.Name = "InvoiceItemsToolStrip";
-            this.InvoiceItemsToolStrip.NullText = "Settings";
-            this.InvoiceItemsToolStrip.ShowImageInEditorArea = false;
-            this.InvoiceItemsToolStrip.ShowItemToolTips = false;
-            this.InvoiceItemsToolStrip.Size = new System.Drawing.Size(117, 20);
-            this.InvoiceItemsToolStrip.TabIndex = 1032;
-            this.InvoiceItemsToolStrip.Visible = false;
-            this.InvoiceItemsToolStrip.CheckAllItemCheckedChanged += new Telerik.WinControls.UI.RadCheckedListDataItemEventHandler(this.InvoiceItemsToolStrip_CheckAllItemCheckedChanged);
-            this.InvoiceItemsToolStrip.ItemCheckedChanged += new Telerik.WinControls.UI.RadCheckedListDataItemEventHandler(this.radCheckedDropDownList1_ItemCheckedChanged);
-            this.InvoiceItemsToolStrip.PopupClosed += new Telerik.WinControls.UI.RadPopupClosedEventHandler(this.InvoiceItemsToolStrip_PopupClosed);
             // 
             // SrNo
             // 
@@ -3103,11 +2895,219 @@
             this.colQuantityFirst.Name = "colQuantityFirst";
             this.colQuantityFirst.Visible = false;
             // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(174, 406);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(82, 14);
+            this.label24.TabIndex = 1011;
+            this.label24.Text = "Cancel Reason";
+            this.label24.Visible = false;
+            // 
+            // canceltextBox
+            // 
+            this.canceltextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.canceltextBox.Location = new System.Drawing.Point(177, 423);
+            this.canceltextBox.Multiline = true;
+            this.canceltextBox.Name = "canceltextBox";
+            this.canceltextBox.Size = new System.Drawing.Size(136, 73);
+            this.canceltextBox.TabIndex = 1010;
+            this.canceltextBox.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ItemId";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "ITEM NAME";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "BacthId";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "BATCH";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "QUANTITY";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 200;
+            // 
+            // uC_SearchItems1
+            // 
+            this.uC_SearchItems1.BackColor = System.Drawing.Color.White;
+            this.uC_SearchItems1.Location = new System.Drawing.Point(18, 88);
+            this.uC_SearchItems1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uC_SearchItems1.Name = "uC_SearchItems1";
+            this.uC_SearchItems1.PageNo = 0;
+            this.uC_SearchItems1.SelectedItemId = 0;
+            this.uC_SearchItems1.SelectedItemName = null;
+            this.uC_SearchItems1.Size = new System.Drawing.Size(274, 23);
+            this.uC_SearchItems1.StoreId = 0;
+            this.uC_SearchItems1.TabIndex = 3;
+            this.uC_SearchItems1.Load += new System.EventHandler(this.uC_SearchItems1_Load);
+            this.uC_SearchItems1.Enter += new System.EventHandler(this.uC_SearchItems1_Enter);
+            this.uC_SearchItems1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uC_SearchItems1_KeyDown);
+            this.uC_SearchItems1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.uC_SearchItems1_KeyPress);
+            this.uC_SearchItems1.Leave += new System.EventHandler(this.uC_SearchItems1_Leave);
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "ConsumptionTypeId";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.HeaderText = "Item";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            // 
+            // radCalculatorDropDown1
+            // 
+            this.radCalculatorDropDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radCalculatorDropDown1.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.radCalculatorDropDown1.Location = new System.Drawing.Point(1126, 83);
+            this.radCalculatorDropDown1.Name = "radCalculatorDropDown1";
+            this.radCalculatorDropDown1.Size = new System.Drawing.Size(187, 24);
+            this.radCalculatorDropDown1.TabIndex = 1031;
+            this.radCalculatorDropDown1.TabStop = false;
+            this.radCalculatorDropDown1.Value = "0";
+            // 
+            // pbInfo
+            // 
+            this.pbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbInfo.Image = ((System.Drawing.Image)(resources.GetObject("pbInfo.Image")));
+            this.pbInfo.Location = new System.Drawing.Point(1314, 1);
+            this.pbInfo.Name = "pbInfo";
+            this.pbInfo.Size = new System.Drawing.Size(29, 30);
+            this.pbInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbInfo.TabIndex = 99;
+            this.pbInfo.TabStop = false;
+            this.pbInfo.Visible = false;
+            this.pbInfo.Click += new System.EventHandler(this.pbInfo_Click);
+            // 
+            // InvoiceItemsToolStrip
+            // 
+            this.InvoiceItemsToolStrip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.InvoiceItemsToolStrip.DefaultItemsCountInDropDown = 10;
+            this.InvoiceItemsToolStrip.DropDownAnimationEasing = Telerik.WinControls.RadEasingType.InQuart;
+            this.InvoiceItemsToolStrip.EnableAnalytics = false;
+            this.InvoiceItemsToolStrip.EnableGestures = false;
+            this.InvoiceItemsToolStrip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            radCheckedListDataItem1.Text = "CheckedItem 1";
+            radCheckedListDataItem2.Text = "CheckedItem 2";
+            radCheckedListDataItem3.Text = "CheckedItem 3";
+            radCheckedListDataItem4.Text = "CheckedItem 4";
+            radCheckedListDataItem5.Text = "CheckedItem 5";
+            radCheckedListDataItem6.Text = "CheckedItem 6";
+            radCheckedListDataItem7.Text = "CheckedItem 7";
+            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem1);
+            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem2);
+            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem3);
+            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem4);
+            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem5);
+            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem6);
+            this.InvoiceItemsToolStrip.Items.Add(radCheckedListDataItem7);
+            this.InvoiceItemsToolStrip.Location = new System.Drawing.Point(1004, 84);
+            this.InvoiceItemsToolStrip.Name = "InvoiceItemsToolStrip";
+            this.InvoiceItemsToolStrip.NullText = "Settings";
+            this.InvoiceItemsToolStrip.ShowImageInEditorArea = false;
+            this.InvoiceItemsToolStrip.ShowItemToolTips = false;
+            this.InvoiceItemsToolStrip.Size = new System.Drawing.Size(117, 20);
+            this.InvoiceItemsToolStrip.TabIndex = 1032;
+            this.InvoiceItemsToolStrip.Visible = false;
+            this.InvoiceItemsToolStrip.CheckAllItemCheckedChanged += new Telerik.WinControls.UI.RadCheckedListDataItemEventHandler(this.InvoiceItemsToolStrip_CheckAllItemCheckedChanged);
+            this.InvoiceItemsToolStrip.ItemCheckedChanged += new Telerik.WinControls.UI.RadCheckedListDataItemEventHandler(this.radCheckedDropDownList1_ItemCheckedChanged);
+            this.InvoiceItemsToolStrip.PopupClosed += new Telerik.WinControls.UI.RadPopupClosedEventHandler(this.InvoiceItemsToolStrip_PopupClosed);
+            // 
             // frmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1343, 675);
             this.Controls.Add(this.InvoiceItemsToolStrip);
             this.Controls.Add(this.radCalculatorDropDown1);

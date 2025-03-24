@@ -131,22 +131,20 @@
             // 
             this.pnlRights.AutoScroll = true;
             this.pnlRights.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlRights.Location = new System.Drawing.Point(120, 422);
+            this.pnlRights.Location = new System.Drawing.Point(133, 262);
             this.pnlRights.Name = "pnlRights";
             this.pnlRights.Size = new System.Drawing.Size(761, 175);
             this.pnlRights.TabIndex = 5;
-            this.pnlRights.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(117, 399);
+            this.label5.Location = new System.Drawing.Point(130, 239);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 15);
             this.label5.TabIndex = 5;
             this.label5.Text = "Select Permissions";
-            this.label5.Visible = false;
             // 
             // ErrMessage
             // 
@@ -253,7 +251,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(583, 209);
+            this.btnAdd.Location = new System.Drawing.Point(913, 54);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(150, 34);
             this.btnAdd.TabIndex = 41;
@@ -268,7 +266,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(583, 249);
+            this.btnCancel.Location = new System.Drawing.Point(913, 94);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 34);
             this.btnCancel.TabIndex = 42;
@@ -451,13 +449,12 @@
             // SelectcAllheckBox
             // 
             this.SelectcAllheckBox.AutoSize = true;
-            this.SelectcAllheckBox.Location = new System.Drawing.Point(809, 400);
+            this.SelectcAllheckBox.Location = new System.Drawing.Point(822, 240);
             this.SelectcAllheckBox.Name = "SelectcAllheckBox";
             this.SelectcAllheckBox.Size = new System.Drawing.Size(72, 18);
             this.SelectcAllheckBox.TabIndex = 55;
             this.SelectcAllheckBox.Text = "Select All";
             this.SelectcAllheckBox.UseVisualStyleBackColor = true;
-            this.SelectcAllheckBox.Visible = false;
             this.SelectcAllheckBox.CheckedChanged += new System.EventHandler(this.SelectcAllheckBox_CheckedChanged);
             // 
             // frmAddUser

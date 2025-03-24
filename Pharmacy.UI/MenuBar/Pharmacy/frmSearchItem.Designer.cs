@@ -30,15 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearchItem));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.chkHold = new System.Windows.Forms.CheckBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.pbInfo = new System.Windows.Forms.PictureBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.grdItems = new System.Windows.Forms.DataGridView();
-            this.colLoad = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colMissedSale = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtGotoPage = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -78,6 +76,8 @@
             this.RetailPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvailableQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLoad = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colMissedSale = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdItems)).BeginInit();
@@ -97,11 +97,13 @@
             this.chkHold.TabIndex = 1;
             this.chkHold.Text = "Hold Search Dialog";
             this.chkHold.UseVisualStyleBackColor = true;
+            this.chkHold.Visible = false;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Location = new System.Drawing.Point(875, 380);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 31);
@@ -121,12 +123,13 @@
             this.pbInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbInfo.TabIndex = 100;
             this.pbInfo.TabStop = false;
+            this.pbInfo.Visible = false;
             this.pbInfo.Click += new System.EventHandler(this.pbInfo_Click);
             // 
             // btnRefresh
             // 
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(6, 2);
+            this.btnRefresh.Location = new System.Drawing.Point(7, 4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(92, 32);
             this.btnRefresh.TabIndex = 39;
@@ -139,8 +142,8 @@
             // 
             this.grdItems.AllowUserToAddRows = false;
             this.grdItems.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.grdItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.grdItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grdItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -177,24 +180,6 @@
             this.grdItems.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.grdItems_EditingControlShowing);
             this.grdItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdItems_KeyDown);
             // 
-            // colLoad
-            // 
-            this.colLoad.HeaderText = "Load";
-            this.colLoad.Name = "colLoad";
-            this.colLoad.ReadOnly = true;
-            this.colLoad.Text = "Load";
-            this.colLoad.UseColumnTextForButtonValue = true;
-            this.colLoad.Width = 60;
-            // 
-            // colMissedSale
-            // 
-            this.colMissedSale.HeaderText = "Missed Sale";
-            this.colMissedSale.Name = "colMissedSale";
-            this.colMissedSale.ReadOnly = true;
-            this.colMissedSale.Text = "Missed Sale";
-            this.colMissedSale.UseColumnTextForButtonValue = true;
-            this.colMissedSale.Width = 80;
-            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -202,16 +187,12 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txtGotoPage);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.btnLastPage);
-            this.panel1.Controls.Add(this.btnFirstPage);
-            this.panel1.Controls.Add(this.btnNext);
-            this.panel1.Controls.Add(this.lblPageNo);
-            this.panel1.Controls.Add(this.btnPrevious);
-            this.panel1.Location = new System.Drawing.Point(215, 380);
+            this.panel1.Location = new System.Drawing.Point(343, 384);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(526, 31);
             this.panel1.TabIndex = 101;
+            this.panel1.Visible = false;
             // 
             // txtGotoPage
             // 
@@ -234,13 +215,13 @@
             // 
             // btnLastPage
             // 
-            this.btnLastPage.BackColor = System.Drawing.Color.White;
+            this.btnLastPage.BackColor = System.Drawing.Color.AliceBlue;
             this.btnLastPage.FlatAppearance.BorderSize = 0;
             this.btnLastPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(210)))));
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLastPage.ForeColor = System.Drawing.Color.Black;
-            this.btnLastPage.Location = new System.Drawing.Point(333, 3);
+            this.btnLastPage.Location = new System.Drawing.Point(267, 386);
             this.btnLastPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(35, 24);
@@ -251,13 +232,13 @@
             // 
             // btnFirstPage
             // 
-            this.btnFirstPage.BackColor = System.Drawing.Color.White;
+            this.btnFirstPage.BackColor = System.Drawing.Color.AliceBlue;
             this.btnFirstPage.FlatAppearance.BorderSize = 0;
             this.btnFirstPage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(210)))));
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirstPage.ForeColor = System.Drawing.Color.Black;
-            this.btnFirstPage.Location = new System.Drawing.Point(27, 3);
+            this.btnFirstPage.Location = new System.Drawing.Point(11, 385);
             this.btnFirstPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(33, 24);
@@ -268,14 +249,14 @@
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.BackColor = System.Drawing.Color.AliceBlue;
             this.btnNext.Enabled = false;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(210)))));
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
-            this.btnNext.Location = new System.Drawing.Point(303, 3);
+            this.btnNext.Location = new System.Drawing.Point(237, 386);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(27, 24);
@@ -286,26 +267,26 @@
             // 
             // lblPageNo
             // 
-            this.lblPageNo.BackColor = System.Drawing.Color.White;
+            this.lblPageNo.BackColor = System.Drawing.Color.AliceBlue;
             this.lblPageNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageNo.ForeColor = System.Drawing.Color.Black;
-            this.lblPageNo.Location = new System.Drawing.Point(97, 4);
+            this.lblPageNo.Location = new System.Drawing.Point(81, 386);
             this.lblPageNo.MinimumSize = new System.Drawing.Size(0, 22);
             this.lblPageNo.Name = "lblPageNo";
-            this.lblPageNo.Size = new System.Drawing.Size(199, 22);
+            this.lblPageNo.Size = new System.Drawing.Size(147, 22);
             this.lblPageNo.TabIndex = 7;
             this.lblPageNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPrevious
             // 
-            this.btnPrevious.BackColor = System.Drawing.Color.White;
+            this.btnPrevious.BackColor = System.Drawing.Color.AliceBlue;
             this.btnPrevious.Enabled = false;
             this.btnPrevious.FlatAppearance.BorderSize = 0;
             this.btnPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(210)))));
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.Black;
-            this.btnPrevious.Location = new System.Drawing.Point(63, 3);
+            this.btnPrevious.Location = new System.Drawing.Point(47, 385);
             this.btnPrevious.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(27, 24);
@@ -332,7 +313,7 @@
             this.txtSearch.Size = new System.Drawing.Size(258, 20);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.WatermarkColor = System.Drawing.Color.DimGray;
-            this.txtSearch.WatermarkText = "Search Item by (Name)";
+            this.txtSearch.WatermarkText = "Search Product by (Name)";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
@@ -378,6 +359,7 @@
             this.lblAdvancedSearch.TabIndex = 105;
             this.lblAdvancedSearch.TabStop = true;
             this.lblAdvancedSearch.Text = "Advanced Search";
+            this.lblAdvancedSearch.Visible = false;
             this.lblAdvancedSearch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAdvancedSearch_LinkClicked);
             // 
             // cmbSearchBy
@@ -506,8 +488,10 @@
             // Barcode
             // 
             this.Barcode.HeaderText = "Barcode";
+            this.Barcode.MinimumWidth = 120;
             this.Barcode.Name = "Barcode";
             this.Barcode.ReadOnly = true;
+            this.Barcode.Width = 120;
             // 
             // GenericName
             // 
@@ -515,12 +499,14 @@
             this.GenericName.HeaderText = "GenericName";
             this.GenericName.Name = "GenericName";
             this.GenericName.ReadOnly = true;
+            this.GenericName.Visible = false;
             // 
             // Unit
             // 
             this.Unit.HeaderText = "Unit";
             this.Unit.Name = "Unit";
             this.Unit.ReadOnly = true;
+            this.Unit.Visible = false;
             this.Unit.Width = 50;
             // 
             // Manufacturer
@@ -528,6 +514,7 @@
             this.Manufacturer.HeaderText = "Manufacturer";
             this.Manufacturer.Name = "Manufacturer";
             this.Manufacturer.ReadOnly = true;
+            this.Manufacturer.Visible = false;
             // 
             // colSuppliers
             // 
@@ -545,41 +532,71 @@
             // CostPrice
             // 
             this.CostPrice.HeaderText = "Cost Price";
+            this.CostPrice.MinimumWidth = 80;
             this.CostPrice.Name = "CostPrice";
             this.CostPrice.ReadOnly = true;
-            this.CostPrice.Width = 60;
+            this.CostPrice.Width = 80;
             // 
             // RetailPrice
             // 
             this.RetailPrice.HeaderText = "Retail Price";
+            this.RetailPrice.MinimumWidth = 80;
             this.RetailPrice.Name = "RetailPrice";
-            this.RetailPrice.Width = 60;
+            this.RetailPrice.Width = 80;
             // 
             // Quantity
             // 
             this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 120;
             this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 60;
+            this.Quantity.Width = 120;
             // 
             // AvailableQty
             // 
             this.AvailableQty.HeaderText = "Available Qty";
+            this.AvailableQty.MinimumWidth = 120;
             this.AvailableQty.Name = "AvailableQty";
             this.AvailableQty.ReadOnly = true;
-            this.AvailableQty.Width = 80;
+            this.AvailableQty.Width = 120;
+            // 
+            // colLoad
+            // 
+            this.colLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colLoad.HeaderText = "Load";
+            this.colLoad.MinimumWidth = 100;
+            this.colLoad.Name = "colLoad";
+            this.colLoad.ReadOnly = true;
+            this.colLoad.Text = "Load";
+            this.colLoad.UseColumnTextForButtonValue = true;
+            // 
+            // colMissedSale
+            // 
+            this.colMissedSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colMissedSale.HeaderText = "Missed Sale";
+            this.colMissedSale.MinimumWidth = 100;
+            this.colMissedSale.Name = "colMissedSale";
+            this.colMissedSale.ReadOnly = true;
+            this.colMissedSale.Text = "Missed Sale";
+            this.colMissedSale.UseColumnTextForButtonValue = true;
+            this.colMissedSale.Visible = false;
             // 
             // frmSearchItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(956, 415);
             this.Controls.Add(this.chkAvailbleQty);
             this.Controls.Add(this.cmbSearchBy);
+            this.Controls.Add(this.btnLastPage);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblAdvancedSearch);
+            this.Controls.Add(this.btnFirstPage);
             this.Controls.Add(this.cmbRacks);
             this.Controls.Add(this.cmbSuppliers);
+            this.Controls.Add(this.lblPageNo);
+            this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.cmbManufacturers);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbInfo);
@@ -588,8 +605,10 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grdItems);
             this.Controls.Add(this.chkHold);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSearchItem";
-            this.Text = "Search Item";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Search Product";
             this.Load += new System.EventHandler(this.frmSearchItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -633,6 +652,9 @@
         private System.Windows.Forms.ComboBox cmbRacks;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.ComboBox cmbSearchBy;
+        private System.Windows.Forms.LinkLabel lblAdvancedSearch;
+        private System.Windows.Forms.CheckBox chkAvailbleQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
@@ -647,8 +669,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AvailableQty;
         private System.Windows.Forms.DataGridViewButtonColumn colLoad;
         private System.Windows.Forms.DataGridViewButtonColumn colMissedSale;
-        private System.Windows.Forms.ComboBox cmbSearchBy;
-        private System.Windows.Forms.LinkLabel lblAdvancedSearch;
-        private System.Windows.Forms.CheckBox chkAvailbleQty;
     }
 }

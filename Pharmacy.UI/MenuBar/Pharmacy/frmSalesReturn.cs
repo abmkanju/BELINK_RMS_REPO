@@ -766,8 +766,8 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
                 dgCmbInvoiceId.DataSource = dty;
                 dgCmbInvoiceId.ValueMember = "InvoiceRefNo";
                 dgCmbInvoiceId.DisplayMember = "InvoiceRefNo";
+                r.Cells["colInvoiceId"].Value = dty.Rows[dty.Rows.Count-1][0].ToString();
             }
-            r.Cells["colInvoiceId"].Value = dty.Rows[dty.Rows.Count-1][0].ToString();
             using (unitOfWork = new UnitOfWork())
             {
                 Inv = unitOfWork.InvoiceRepository.GetInvoiceByInvoiceId(unitOfWork.InvoiceRepository.getInvoiceIdByRefNo(Convert.ToInt32(r.Cells["colInvoiceId"].Value)));

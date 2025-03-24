@@ -106,6 +106,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.radButton6 = new Telerik.WinControls.UI.RadButton();
             this.radButton19 = new Telerik.WinControls.UI.RadButton();
             this.radButton18 = new Telerik.WinControls.UI.RadButton();
             this.radButton17 = new Telerik.WinControls.UI.RadButton();
@@ -167,6 +168,7 @@
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton17)).BeginInit();
@@ -1078,6 +1080,7 @@
             // 
             this.panel9.AutoScroll = true;
             this.panel9.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel9.Controls.Add(this.radButton6);
             this.panel9.Controls.Add(this.radButton19);
             this.panel9.Controls.Add(this.radButton18);
             this.panel9.Controls.Add(this.radButton17);
@@ -1101,6 +1104,16 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(231, 440);
             this.panel9.TabIndex = 1;
+            // 
+            // radButton6
+            // 
+            this.radButton6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radButton6.Location = new System.Drawing.Point(0, 774);
+            this.radButton6.Name = "radButton6";
+            this.radButton6.Size = new System.Drawing.Size(214, 43);
+            this.radButton6.TabIndex = 19;
+            this.radButton6.Text = "PRODUCTS";
+            this.radButton6.Click += new System.EventHandler(this.radButton6_Click);
             // 
             // radButton19
             // 
@@ -1275,6 +1288,7 @@
             // radButton1
             // 
             this.radButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radButton1.Image = global::Pharmacy.UI.Properties.Resources.icons8_male_user_ink_96;
             this.radButton1.Location = new System.Drawing.Point(0, 0);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(214, 43);
@@ -1671,6 +1685,7 @@
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton17)).EndInit();
@@ -1836,5 +1851,6 @@
         private Telerik.WinControls.UI.RadButton radButton12;
         private Telerik.WinControls.UI.RadButton radButton11;
         private System.Windows.Forms.Label notificationslabel;
+        private Telerik.WinControls.UI.RadButton radButton6;
     }
 }

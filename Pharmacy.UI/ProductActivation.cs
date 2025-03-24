@@ -635,9 +635,9 @@ namespace Pharmacy.UI
             {
                 using (MailMessage mail = new MailMessage())
                 {
-                    mail.From = new MailAddress("abdulbasit.muner@healthwire.pk", "Product Activation");
-                    mail.To.Add("abdulbasit.muner@healthwire.pk");
-                    mail.To.Add("hassan.rasool@healthwire.pk");
+                    mail.From = new MailAddress("abdulbasitkanju@gmail.com", "Product Activation");
+                    mail.To.Add("abmkanju@gmail.com");
+                    //mail.To.Add("hassan.rasool@healthwire.pk");
                     //mail.To.Add("hamza.yaseen@healthwire.pk");
                     //mail.To.Add("muhammad.inam@healthwire.pk");
                     //mail.To.Add("Healthwire15@gmail.com");
@@ -646,9 +646,9 @@ namespace Pharmacy.UI
                     mail.BodyEncoding = Encoding.GetEncoding("utf-8");
                     mail.SubjectEncoding = System.Text.Encoding.Default;
                     mail.IsBodyHtml = true;
-                    using (SmtpClient smtp = new SmtpClient("smtppro.zoho.com", 587))
+                    using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                     {
-                        smtp.Credentials = new NetworkCredential("abdulbasit.muner@healthwire.pk", "mThUc8naSbMm");
+                        smtp.Credentials = new NetworkCredential("abdulbasitkanju@gmail.com", "zjhc sdvq ctot ealj");
                         smtp.EnableSsl = true;
                         smtp.Send(mail);
                     }

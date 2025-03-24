@@ -556,5 +556,10 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
         {
             AuditLogTask.CreateAuditLog(unitOfWork, u.UserName, AuditModule.User, AuditAction.deleted);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadForm();
+        }
     }
 }

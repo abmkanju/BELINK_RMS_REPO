@@ -446,8 +446,7 @@
             this.radTileElement5.Name = "radTileElement5";
             this.radTileElement5.ShadowColor = System.Drawing.Color.Blue;
             this.radTileElement5.ShadowDepth = 10;
-            this.radTileElement5.Text = "Staff";
-            this.radTileElement5.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+            this.radTileElement5.Text = "Payment Modes";
             this.radTileElement5.Click += new System.EventHandler(this.radTileElement5_Click);
             // 
             // radTileElement6
@@ -469,7 +468,8 @@
             this.radTileElement7.Name = "radTileElement7";
             this.radTileElement7.ShadowColor = System.Drawing.Color.Blue;
             this.radTileElement7.ShadowDepth = 10;
-            this.radTileElement7.Text = "Payment Modes";
+            this.radTileElement7.Text = "Staff";
+            this.radTileElement7.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             this.radTileElement7.Click += new System.EventHandler(this.radTileElement7_Click);
             // 
             // radTileElement8

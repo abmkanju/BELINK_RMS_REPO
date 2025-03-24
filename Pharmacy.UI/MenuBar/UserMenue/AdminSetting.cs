@@ -70,7 +70,7 @@ namespace Pharmacy.UI.MenuBar.UserMenue
             LoadDetials();
             tcAdminSetting.TabPages.Remove(tpProcedureInvoiceSetting);// temporary removing procedure invoice as its not required.
             tcAdminSetting.TabPages.Remove(tpPatient);// temporary removing procedure invoice as its not required.
-            tcAdminSetting.TabPages.Remove(tpBackup);// temporary removing procedure invoice as its not required.
+            //tcAdminSetting.TabPages.Remove(tpBackup);// temporary removing procedure invoice as its not required.
             //tcAdminSetting.TabPages.Remove(tpPrintSetting);// temporary removed
             LoadAdminInvoiceSetting();
             LoadAdminProcedureInvoiceSetting();

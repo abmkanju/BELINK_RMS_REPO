@@ -13,10 +13,10 @@ namespace Pharmacy.Infrastructure
     public class Shared
     {
         //public static string ConnectionString = ConfigurationManager.ConnectionStrings["PharmacyCon"].ToString();
-        public static string GetConnectionString()
+        public static string GetConnectionString1()
         {
 
-            string connection = @"Data Source=(LocalDb)\v11.0;AttachDbFilename=E:\RAW DATA\Project\BELINK RMS\Pharmacy.UI\DBFile\Pharmacy.mdf;Integrated Security=True";
+            string connection = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|BELINKRMS.mdf;Integrated Security=True";
             if(SharedVariables.UseLocalDb)
             {
                 return ConfigurationManager.ConnectionStrings["PharmacyCon_Local"].ConnectionString;
@@ -64,7 +64,7 @@ namespace Pharmacy.Infrastructure
             //return entityBuilder.ToString();
             return sqlBuilder.ConnectionString;
         }
-        public static string GetConnectionString1()
+        public static string GetConnectionString()
         {
             if (SharedVariables.UseLocalDb)
             {

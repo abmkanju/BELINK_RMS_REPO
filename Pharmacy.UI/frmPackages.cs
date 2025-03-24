@@ -1,4 +1,6 @@
-﻿using Pharmacy.Core;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using Pharmacy.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,7 +77,7 @@ namespace Pharmacy.UI
         {
             if (Properties.Settings.Default.counter < 30)
             {
-                if (button1.Text == "Hide This Pop up!")
+                if (button1.Text == "Hide This Pop up!" && false)
                 {
                     this.Hide();
                 }
@@ -206,70 +208,70 @@ namespace Pharmacy.UI
                 }
             }
             string key = ProductActivation.GenerateActivationKey(years.ToString(), months.ToString(), days.ToString());
-/*            string body1 = "<!DOCTYPE html>"+
-"< html >"+
-"< head >"+
-"< style >"+
-  "body {"+
-                "font - family: Arial, sans - serif;"+
-                "background - color: #f4f4f4;"+
-    "margin: 0;"+
-     "           padding: 0;"+
-      "          line - height: 1.6;"+
-       "     }" +
-  ".container {" +
-   "             max - width: 600px;" +
-    "            margin: 20px auto;" +
-     "           padding: 20px;" +
-      "          background - color: #ffffff;" +
-    "border - radius: 5px;" +
-     "           box - shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);" +
-      "      }" +
-       "     h1 {" +
-         "       font - size: 24px;" +
-          "      color: #333;" +
-    "text - align: center;" +
-     "           margin - bottom: 20px;" +
-      "      }" +
-       "     h3 {" +
-        "        font - size: 18px;" +
-         "       color: #555;" +
-   " margin: 10px 0;" +
-           "}" +
-            "p {"+
-                "font - size: 16px;"+
-                "color: #666;"+
-  "}"+
-  ".center {"+
-                "text - align: center;"+
- "           }"+
-"</ style >"+
-"</ head >"+
-"< body >"+
-"< div class='container'>"+
-  "<h1>Product Activation Request</h1>"+
-  "<h3>Practice Information</h3>"+
-  "<p><strong>Practice Name:</strong> "+ SharedVariables.AdminPractiseSetting.Name + "</p>"+
-  "<p><strong>Practice ID:</strong>" + SharedVariables.AdminPractiseSetting.PracticeId + "</p>" +
-  "<p><strong>Pharmacy Address:</strong> " + SharedVariables.AdminPractiseSetting.Address + "</p>" +
-  "<p><strong>Pharmacy Contact #:</strong>" + SharedVariables.AdminPractiseSetting.Phone + "</p>"+
-  
-  "<h3>Network Configuration Details</h3>"+
-  "<p><strong>Using Network:</strong>"+ IsNetwork + "</p>"+
-  "<p><strong>Network System Limits:</strong>"+ numnoofsystems.Value.ToString() + "</p>" +
-  "<p><strong>Network IP Address:</strong>" + txtipaddress.Text + "</p>"+
-  
-  "<h3>Activation Period</h3>"+
-  "<p><strong>Activation Period:</strong>"+ ((years != 0 ? years + "Years," : "") + (months != 0 ? months + "Months and " : "") + (days != 0 ? days + "Days" : "")) + "</p>"+
-  
-  "<div class='center'>"+
-    "<p><strong>Your network activation key:</strong>"+ key +"</p>"+
-  "</div>"+
-"</div>"+
-"</body>"+
-"</html>";*/
+            /*            string body1 = "<!DOCTYPE html>"+
+            "< html >"+
+            "< head >"+
+            "< style >"+
+              "body {"+
+                            "font - family: Arial, sans - serif;"+
+                            "background - color: #f4f4f4;"+
+                "margin: 0;"+
+                 "           padding: 0;"+
+                  "          line - height: 1.6;"+
+                   "     }" +
+              ".container {" +
+               "             max - width: 600px;" +
+                "            margin: 20px auto;" +
+                 "           padding: 20px;" +
+                  "          background - color: #ffffff;" +
+                "border - radius: 5px;" +
+                 "           box - shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);" +
+                  "      }" +
+                   "     h1 {" +
+                     "       font - size: 24px;" +
+                      "      color: #333;" +
+                "text - align: center;" +
+                 "           margin - bottom: 20px;" +
+                  "      }" +
+                   "     h3 {" +
+                    "        font - size: 18px;" +
+                     "       color: #555;" +
+               " margin: 10px 0;" +
+                       "}" +
+                        "p {"+
+                            "font - size: 16px;"+
+                            "color: #666;"+
+              "}"+
+              ".center {"+
+                            "text - align: center;"+
+             "           }"+
+            "</ style >"+
+            "</ head >"+
+            "< body >"+
+            "< div class='container'>"+
+              "<h1>Product Activation Request</h1>"+
+              "<h3>Profile Information</h3>"+
+              "<p><strong>Profile Name:</strong> "+ SharedVariables.AdminPractiseSetting.Name + "</p>"+
+              "<p><strong>Profile ID:</strong>" + SharedVariables.AdminPractiseSetting.PracticeId + "</p>" +
+              "<p><strong>Store Address:</strong> " + SharedVariables.AdminPractiseSetting.Address + "</p>" +
+              "<p><strong>Store Contact #:</strong>" + SharedVariables.AdminPractiseSetting.Phone + "</p>"+
+
+              "<h3>Network Configuration Details</h3>"+
+              "<p><strong>Using Network:</strong>"+ IsNetwork + "</p>"+
+              "<p><strong>Network System Limits:</strong>"+ numnoofsystems.Value.ToString() + "</p>" +
+              "<p><strong>Network IP Address:</strong>" + txtipaddress.Text + "</p>"+
+
+              "<h3>Activation Period</h3>"+
+              "<p><strong>Activation Period:</strong>"+ ((years != 0 ? years + "Years," : "") + (months != 0 ? months + "Months and " : "") + (days != 0 ? days + "Days" : "")) + "</p>"+
+
+              "<div class='center'>"+
+                "<p><strong>Your network activation key:</strong>"+ key +"</p>"+
+              "</div>"+
+            "</div>"+
+            "</body>"+
+            "</html>";*/
             //MessageBox.Show(show(Properties.Settings.Default.ActivationKey));
-            
+            //InsertKeyAsync();
             string subject = "Product Activation Request by " + SharedVariables.AdminPractiseSetting.Name;
             string Body = "<h3>Practise Name: " + SharedVariables.AdminPractiseSetting.Name + "<br>" + "Practise ID: " + SharedVariables.AdminPractiseSetting.PracticeId + "<br>" + " Pharmacy Address: " + SharedVariables.AdminPractiseSetting.Address + "<br>" + "Pharmacy Contact# : " + SharedVariables.AdminPractiseSetting.Phone + "</h3>"+ "<br>" + "Using Network : " + IsNetwork + "</h3>" + "<br>" + "Network System Limits : " + numnoofsystems.Value.ToString() + "</h3>" + "<br>" + "Network IP : " + txtipaddress.Text + "</h3>"+ "<br>" + "Activation Period : " + ((years != 0 ? years+ "Years," : "") + (months !=0 ? months+ "Months and " :"") + (days != 0 ? days + "Days" : "")) + "</h3>";
             Body = Body + "<Center><h1>" + key + "</h1></Center>";
@@ -287,7 +289,7 @@ namespace Pharmacy.UI
                 Properties.Settings.Default.numberofsystems = numofsystems;
                 Properties.Settings.Default.Save();
                 ProductActivation.WriteStringsToSheet(SharedVariables.AdminPractiseSetting.Name , ProductActivation.getCPUId() , actidate  , expdate , key , years , months , days, IsNetwork ,1 );
-                MessageBox.Show("Activation Request Send to Healthwire.pk , Please Contact Healthwire for Activation Key....");
+                MessageBox.Show("Activation Request Send to BELINK SUPPORT , Please Contact BELINKWIRE TEAM for Activation Key....");
             }
             else
             {
@@ -310,7 +312,7 @@ namespace Pharmacy.UI
             }
             this.Cursor = Cursors.Default;
         }
-
+        
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new frmActivation(this).ShowDialog();

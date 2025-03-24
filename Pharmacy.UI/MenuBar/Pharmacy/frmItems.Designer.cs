@@ -117,7 +117,7 @@
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(131, 36);
             this.btnAddItem.TabIndex = 16;
-            this.btnAddItem.Text = "Add";
+            this.btnAddItem.Text = "Save";
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
@@ -129,6 +129,7 @@
             this.label2.Size = new System.Drawing.Size(38, 14);
             this.label2.TabIndex = 4;
             this.label2.Text = "Rack#";
+            this.label2.Visible = false;
             // 
             // txtBarcode
             // 
@@ -227,6 +228,7 @@
             this.txtChemicalName.Name = "txtChemicalName";
             this.txtChemicalName.Size = new System.Drawing.Size(246, 21);
             this.txtChemicalName.TabIndex = 13;
+            this.txtChemicalName.Visible = false;
             // 
             // label8
             // 
@@ -236,6 +238,7 @@
             this.label8.Size = new System.Drawing.Size(78, 14);
             this.label8.TabIndex = 17;
             this.label8.Text = "Generic Name";
+            this.label8.Visible = false;
             // 
             // txtUnitCostPrice
             // 
@@ -262,6 +265,7 @@
             this.label10.Size = new System.Drawing.Size(49, 14);
             this.label10.TabIndex = 21;
             this.label10.Text = "Narcotic";
+            this.label10.Visible = false;
             // 
             // chkNarcotic
             // 
@@ -272,6 +276,7 @@
             this.chkNarcotic.TabIndex = 15;
             this.chkNarcotic.Text = "Narcotic";
             this.chkNarcotic.UseVisualStyleBackColor = true;
+            this.chkNarcotic.Visible = false;
             // 
             // ErrItemName
             // 
@@ -582,6 +587,7 @@
             this.cmbRacks.Name = "cmbRacks";
             this.cmbRacks.Size = new System.Drawing.Size(248, 22);
             this.cmbRacks.TabIndex = 2;
+            this.cmbRacks.Visible = false;
             // 
             // btnAddRack
             // 
@@ -591,6 +597,7 @@
             this.btnAddRack.TabIndex = 5;
             this.btnAddRack.Text = "+";
             this.btnAddRack.UseVisualStyleBackColor = true;
+            this.btnAddRack.Visible = false;
             this.btnAddRack.Click += new System.EventHandler(this.btnAddRack_Click);
             // 
             // btnAddManf
@@ -690,6 +697,7 @@
             0,
             0,
             0});
+            this.numStrips.Visible = false;
             // 
             // label18
             // 
@@ -699,6 +707,7 @@
             this.label18.Size = new System.Drawing.Size(68, 14);
             this.label18.TabIndex = 86;
             this.label18.Text = "No. Of Strip";
+            this.label18.Visible = false;
             // 
             // frmItems
             // 

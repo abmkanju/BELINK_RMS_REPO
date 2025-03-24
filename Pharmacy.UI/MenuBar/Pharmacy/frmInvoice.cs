@@ -3458,7 +3458,7 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
         //}
         private FlatDiscount loadFlatDiscount(int itemId, DataGridViewRow r)
         {
-            int dayOfWeek = (int)DateTime.Now.DayOfWeek;
+            /*int dayOfWeek = (int)DateTime.Now.DayOfWeek;
             return SharedVariables.TodayDiscounts
                 .Where(
                             d =>
@@ -3482,7 +3482,8 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
                                 d.SelectedDays.Contains(dayOfWeek.ToString())
                             )
                         )
-                        .LastOrDefault();
+                        .LastOrDefault();*/
+            return null;
         }
 
         private void GetSelectedItemData(int ItemId, DataGridViewRow r)
@@ -10936,6 +10937,7 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
                 Double DiscountedPrice = 0;
                 string batchname = "";
                 Double Rate = 0;
+                int avqty = 0;
                 int unit = 0;
                 int btch = 0;
                 DataTable dt = get("Select Item_ItemID , Discount ,UnitCost,PercDiscType,TotalCost,Quantity,RetailPrice,Unit,Batch_BatchId  from StockItems where Item_ItemID=" + ItemId);
@@ -10959,6 +10961,7 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
                     DataTable batch = get("Select BatchName from Batches where BatchId=" + btch);
                     batchname = batch.Rows[0][0].ToString();
                     int qty = Convert.ToInt32(dt.Rows[dt.Rows.Count - 1]["Quantity"].ToString());
+                    avqty = qty;
                     Rate = Convert.ToDouble(dt.Rows[dt.Rows.Count - 1]["RetailPrice"].ToString());
                     if (DiscountType == 0)
                     {
@@ -11069,7 +11072,7 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
                             DiscountedPrice,//unitcot
                             0,//retail price
                             Profit(Rate, DiscountedPrice), //ProfitMargin
-                            0,//available qty
+                            avqty,//available qty
                             Quantity,
                             0, //bonus qty
                             0,//amount
@@ -11405,7 +11408,10 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
         private void grdItems_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
-
+            if(grdItems.Rows.Count <= 0)
+            {
+                return;
+            }
             grdItems.CellValueChanged -= grdItems_CellValueChanged;
             int returnQty = SharedFunctions.StringToInt(grdItems.Rows[e.RowIndex].Cells["colReturnQuantity"].Value);
             if (e.RowIndex < 0) return;

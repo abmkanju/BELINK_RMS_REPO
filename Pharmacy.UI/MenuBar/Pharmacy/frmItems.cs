@@ -514,7 +514,7 @@ namespace Pharmacy.UI.MenuBar.Pharmacy
                             Supplier objSupplier = unitOfWork.SupplierRepository.GetById(supp.TabIndex);
                             objItem.Suppliers.Add(objSupplier);
                         }
-                        objItem.IsActive = false;
+                        objItem.IsActive = true;
                         if (SharedVariables.AdminPharmacySetting.IsOnlineIntegEnable)
                         {
                             objItem.IsDefault = true;

@@ -69,13 +69,14 @@ namespace Pharmacy.UI.Reports.Financial
 
         private void radTileElement5_Click(object sender, EventArgs e)
         {
-            SharedFunctions.OpenForm(new StaffUI(), this.MdiParent);
+            SharedFunctions.OpenForm(new PaymentModeUI(), this.MdiParent);
+
 
         }
 
         private void radTileElement7_Click(object sender, EventArgs e)
         {
-            SharedFunctions.OpenForm(new PaymentModeUI(), this.MdiParent);
+            SharedFunctions.OpenForm(new StaffUI(), this.MdiParent);
 
         }
 
